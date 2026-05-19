@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verte Energies Limited | Oil, Gas, Engineering & Infrastructure Solutions</title>
+    <meta name="description" content="Verte Energies Limited is a technology-driven indigenous Nigerian energy and engineering company delivering integrated oil, gas, engineering, and infrastructure solutions with a commitment to safety, quality, innovation, and sustainability." />
+    <meta name="keywords" content="Verte Energies Limited, oil and gas Nigeria, EPCM, civil engineering, fabrication, marine inspection, procurement, laboratory testing, infrastructure solutions, Abuja, Nigeria" />
+    <meta name="author" content="Verte Energies Limited" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0a192f" />
+    <link rel="canonical" href="https://www.verteenergies.com/" />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Verte Energies Limited" />
+    <meta property="og:title" content="Verte Energies Limited | Oil, Gas, Engineering & Infrastructure Solutions" />
+    <meta property="og:description" content="A technology-driven indigenous Nigerian energy and engineering company delivering integrated oil, gas, engineering, and infrastructure solutions." />
+    <meta property="og:url" content="https://www.verteenergies.com/" />
+    <meta property="og:image" content="/images/og-image.jpg" />
+    <meta property="og:image:alt" content="Verte Energies Limited - Oil & Gas Engineering" />
+    <meta property="og:locale" content="en_NG" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Verte Energies Limited | Oil, Gas, Engineering & Infrastructure Solutions" />
+    <meta name="twitter:description" content="A technology-driven indigenous Nigerian energy and engineering company delivering integrated oil, gas, engineering, and infrastructure solutions." />
+    <meta name="twitter:image" content="/images/og-image.jpg" />
+    <meta name="twitter:image:alt" content="Verte Energies Limited - Oil & Gas Engineering" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes floatingGlow {
+        0%, 100% {
+          box-shadow: 0 0 40px rgba(184, 155, 94, 0.3), 0 0 80px rgba(184, 155, 94, 0.1);
+          transform: translateY(0px);
+        }
+        50% {
+          box-shadow: 0 0 60px rgba(184, 155, 94, 0.5), 0 0 120px rgba(184, 155, 94, 0.2);
+          transform: translateY(-10px);
+        }
+      }
+
+      @keyframes scrollBounce {
+        0%, 100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        50% {
+          transform: translateY(10px);
+          opacity: 0.5;
+        }
+      }
+
+      @keyframes lineAccent {
+        0% {
+          width: 0;
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          width: 100%;
+          opacity: 1;
+        }
+      }
+
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0px) translateX(0px);
+        }
+        25% {
+          transform: translateY(-20px) translateX(10px);
+        }
+        50% {
+          transform: translateY(-30px) translateX(-15px);
+        }
+        75% {
+          transform: translateY(-15px) translateX(20px);
+        }
+      }
+
+      .fade-in-text {
+        animation: fadeInUp 1.2s ease-out forwards;
+      }
+
+      .fade-in-text:nth-child(1) {
+        animation-delay: 0.2s;
+      }
+
+      .fade-in-text:nth-child(2) {
+        animation-delay: 0.4s;
+      }
+
+      .fade-in-text:nth-child(3) {
+        animation-delay: 0.6s;
+      }
+
+      .fade-in-text:nth-child(4) {
+        animation-delay: 0.8s;
+      }
+
+      .industrial-glow {
+        animation: floatingGlow 4s ease-in-out infinite;
+      }
+
+      .scroll-indicator {
+        animation: scrollBounce 2s ease-in-out infinite;
+      }
+
+      .line-accent {
+        animation: lineAccent 1.5s ease-out forwards;
+        animation-delay: 1s;
+      }
+
+      .particle {
+        position: absolute;
+        pointer-events: none;
+        opacity: 0.15;
+      }
+
+      .particle-float {
+        animation: float 20s infinite ease-in-out;
+      }
+
+      .parallax-text {
+        position: relative;
+      }
+    </style>
+  
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Playfair Display', 'serif'],
+            },
+            colors: {
+              verte: {
+                green: '#1E3A34',
+                black: '#111111',
+                offwhite: '#F5F5F5',
+                gold: '#B89B5E',
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <script src="/js/main.js" defer></script>
+    <style>
+      body { font-family: 'Inter', sans-serif; background: #111111; color: #F5F5F5; }
+      .reveal { opacity: 0; transform: translateY(40px); transition: all 0.7s cubic-bezier(.25,.8,.25,1); }
+      .reveal.active { opacity: 1; transform: none; }
+      .card-hover { transition: box-shadow 0.3s, transform 0.3s; }
+      .card-hover:hover { box-shadow: 0 8px 32px 0 rgba(34,64,56,0.25); transform: translateY(-4px) scale(1.02); }
+      .sticky-nav { box-shadow: 0 2px 8px 0 rgba(34,64,56,0.10); }
+      .preloader-spinner { border: 6px solid #1E3A34; border-top: 6px solid #B89B5E; border-radius: 50%; width: 60px; height: 60px; animation: spin 1s linear infinite; }
+      @keyframes spin { 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body class="scroll-smooth">
+  <!-- Preloader -->
+  <div id="preloader" class="fixed inset-0 flex items-center justify-center bg-[#111111] z-[9999]">
+    <div class="preloader-spinner"></div>
+  </div>
+  <!-- Navbar -->
+  <header id="navbar" class="fixed top-0 left-0 w-full z-50 bg-[#111111]/90 backdrop-blur border-b border-[#1E3A34] transition-all">
+    <nav class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+      <a href="#home" class="flex items-center gap-2">
+        <img src="/big logo.svg" alt="Verte Energies Logo" class="h-12 w-auto max-w-xs" style="filter: brightness(0) invert(1);" />
+      </a>
+      <ul class="hidden md:flex gap-8 text-base font-semibold items-center">
+        <li><a href="#home" class="hover:text-[#B89B5E] transition">Home</a></li>
+        <li><a href="#about" class="hover:text-[#ffd700] transition">About</a></li>
+        <li><a href="#services" class="hover:text-[#ffd700] transition">Services</a></li>
+        <li><a href="#projects" class="hover:text-[#ffd700] transition">Projects</a></li>
+        <li><a href="#contact" class="hover:text-[#ffd700] transition">Contact</a></li>
+        <li><a href="#contact" class="bg-gradient-to-r from-[#B89B5E] to-[#d4af37] text-[#111111] font-bold px-6 py-2 rounded-lg hover:shadow-lg transition">Get In Touch</a></li>
+      </ul>
+      <button class="md:hidden text-[#B89B5E] focus:outline-none" id="mobile-menu-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+      </button>
+    </nav>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-[#111111] border-t border-[#1E3A34] px-4 py-4">
+      <ul class="flex flex-col gap-4 text-lg font-semibold">
+        <li><a href="#home" class="hover:text-[#B89B5E] transition">Home</a></li>
+        <li><a href="#about" class="hover:text-[#B89B5E] transition">About</a></li>
+        <li><a href="#services" class="hover:text-[#ffd700] transition">Services</a></li>
+        <li><a href="#projects" class="hover:text-[#ffd700] transition">Projects</a></li>
+        <li><a href="#contact" class="hover:text-[#ffd700] transition">Contact</a></li>
+        <li><a href="#contact" class="block bg-gradient-to-r from-[#B89B5E] to-[#d4af37] text-[#111111] font-bold px-6 py-3 rounded-lg text-center hover:shadow-lg transition mt-2">Get In Touch</a></li>
+      </ul>
+    </div>
+  </header>
+  <!-- HERO SECTION WITH CAROUSEL -->
+  <section id="home" class="relative w-full h-screen min-h-screen overflow-hidden bg-[#111111]">
+    <!-- Carousel Container -->
+    <div class="carousel-container relative w-full h-full">
+      <!-- Slide 1: From The Depths -->
+      <div class="carousel-slide absolute w-full h-full transition-none opacity-100" style="background-image: url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1920&h=1080&fit=crop'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-black/40"></div>
+        
+        <!-- Particles for Slide 1 -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+          <div class="particle particle-float" style="width: 60px; height: 60px; border: 2px solid #B89B5E; border-radius: 50%; top: 15%; left: 10%; animation-delay: 0s;"></div>
+          <div class="particle particle-float" style="width: 40px; height: 40px; border: 2px solid #B89B5E; border-radius: 50%; top: 60%; left: 85%; animation-delay: 3s;"></div>
+          <div class="particle particle-float" style="width: 30px; height: 30px; border: 2px solid #B89B5E; top: 70%; left: 15%; animation-delay: 6s;"></div>
+          <div class="particle particle-float" style="width: 50px; height: 50px; border: 2px solid #B89B5E; border-radius: 50%; top: 25%; left: 80%; animation-delay: 9s;"></div>
+        </div>
+
+        <!-- Content Overlay -->
+        <div class="absolute inset-0 flex items-center justify-center z-10">
+          <div class="text-center text-white max-w-4xl mx-auto px-4 parallax-text">
+            <!-- Animated Line Accent -->
+            <div class="line-accent mx-auto mb-8" style="height: 3px; width: 80px; background: linear-gradient(90deg, #B89B5E, transparent); margin-left: auto; margin-right: auto;"></div>
+
+            <!-- Main Heading with Fade-in and Glow -->
+            <div class="fade-in-text industrial-glow p-4 rounded-lg" style="display: inline-block;">
+              <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#B89B5E]" style="letter-spacing: 0.05em;">From The Depths</h1>
+            </div>
+            
+            <div class="fade-in-text industrial-glow p-4 rounded-lg" style="display: inline-block; margin-top: 1rem;">
+              <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#B89B5E]" style="letter-spacing: 0.05em;">We Power Destiny</h1>
+            </div>
+
+            <!-- Description -->
+            <div class="fade-in-text mt-8 max-w-2xl mx-auto">
+              <p class="text-lg md:text-xl text-gray-200 leading-relaxed drop-shadow-lg">A technology-driven indigenous Nigerian energy and engineering company delivering integrated oil, gas, engineering, and infrastructure solutions with a commitment to safety, quality, innovation, and sustainability.</p>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="fade-in-text flex flex-col sm:flex-row gap-4 justify-center mt-8">
+              <a href="#services" class="px-8 py-3 rounded bg-[#B89B5E] text-[#111111] font-bold shadow-lg hover:bg-[#CBB883] hover:shadow-xl transition transform hover:scale-105">Our Services</a>
+              <a href="#contact" class="px-8 py-3 rounded border border-[#B89B5E] text-[#B89B5E] font-bold hover:bg-[#B89B5E] hover:text-[#111111] transition transform hover:scale-105">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Slide 2: Corporate Strength -->
+      <div class="carousel-slide absolute w-full h-full transition-none opacity-0" style="background-image: url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1920&h=1080&fit=crop'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-black/40"></div>
+
+        <!-- Particles for Slide 2 -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+          <div class="particle particle-float" style="width: 60px; height: 60px; border: 2px solid #B89B5E; border-radius: 50%; top: 15%; left: 10%; animation-delay: 0s;"></div>
+          <div class="particle particle-float" style="width: 40px; height: 40px; border: 2px solid #B89B5E; border-radius: 50%; top: 60%; left: 85%; animation-delay: 3s;"></div>
+          <div class="particle particle-float" style="width: 30px; height: 30px; border: 2px solid #B89B5E; top: 70%; left: 15%; animation-delay: 6s;"></div>
+          <div class="particle particle-float" style="width: 50px; height: 50px; border: 2px solid #B89B5E; border-radius: 50%; top: 25%; left: 80%; animation-delay: 9s;"></div>
+        </div>
+
+        <!-- Content Overlay -->
+        <div class="absolute inset-0 flex items-center justify-center z-10">
+          <div class="text-center text-white max-w-3xl mx-auto px-4 parallax-text">
+            <!-- Animated Line Accent -->
+            <div class="line-accent mx-auto mb-6" style="height: 3px; width: 80px; background: linear-gradient(90deg, #B89B5E, transparent); margin-left: auto; margin-right: auto;"></div>
+
+            <!-- Category Label -->
+            <div class="fade-in-text">
+              <p class="text-[#B89B5E] font-semibold mb-3 text-sm tracking-widest uppercase">Corporate Strength</p>
+            </div>
+
+            <!-- Heading with Glow -->
+            <div class="fade-in-text industrial-glow p-4 rounded-lg" style="display: inline-block;">
+              <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#B89B5E]" style="letter-spacing: 0.05em;">Built On Engineering Excellence</h2>
+            </div>
+
+            <!-- Description -->
+            <div class="fade-in-text mt-6 max-w-2xl mx-auto">
+              <p class="text-lg md:text-xl text-gray-200 leading-relaxed drop-shadow-lg">Verte Energies Limited delivers integrated energy, engineering, and infrastructure solutions designed to meet the evolving demands of the oil and gas industry. With a strong commitment to operational excellence, safety, and innovation, we execute projects that align with international standards while supporting sustainable development across Africa.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Slide 3: Oil & Gas Operations -->
+      <div class="carousel-slide absolute w-full h-full transition-none opacity-0" style="background-image: url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1920&h=1080&fit=crop'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-black/40"></div>
+
+        <!-- Particles for Slide 3 -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+          <div class="particle particle-float" style="width: 60px; height: 60px; border: 2px solid #B89B5E; border-radius: 50%; top: 15%; left: 10%; animation-delay: 0s;"></div>
+          <div class="particle particle-float" style="width: 40px; height: 40px; border: 2px solid #B89B5E; border-radius: 50%; top: 60%; left: 85%; animation-delay: 3s;"></div>
+          <div class="particle particle-float" style="width: 30px; height: 30px; border: 2px solid #B89B5E; top: 70%; left: 15%; animation-delay: 6s;"></div>
+          <div class="particle particle-float" style="width: 50px; height: 50px; border: 2px solid #B89B5E; border-radius: 50%; top: 25%; left: 80%; animation-delay: 9s;"></div>
+        </div>
+
+        <!-- Content Overlay -->
+        <div class="absolute inset-0 flex items-center justify-center z-10">
+          <div class="text-center text-white max-w-3xl mx-auto px-4 parallax-text">
+            <!-- Animated Line Accent -->
+            <div class="line-accent mx-auto mb-6" style="height: 3px; width: 80px; background: linear-gradient(90deg, #B89B5E, transparent); margin-left: auto; margin-right: auto;"></div>
+
+            <!-- Category Label -->
+            <div class="fade-in-text">
+              <p class="text-[#B89B5E] font-semibold mb-3 text-sm tracking-widest uppercase">Oil & Gas Operations</p>
+            </div>
+
+            <!-- Heading with Glow -->
+            <div class="fade-in-text industrial-glow p-4 rounded-lg" style="display: inline-block;">
+              <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#B89B5E]" style="letter-spacing: 0.05em;">Integrated Oil & Gas Solutions</h2>
+            </div>
+
+            <!-- Description -->
+            <div class="fade-in-text mt-6 max-w-2xl mx-auto">
+              <p class="text-lg md:text-xl text-gray-200 leading-relaxed drop-shadow-lg">From pipeline construction and facility maintenance to production support and integrity management, Verte Energies provides reliable upstream and downstream services that improve efficiency, safety, and long-term operational performance.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Slide 4: EPCM & Engineering -->
+      <div class="carousel-slide absolute w-full h-full transition-none opacity-0" style="background-image: url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1920&h=1080&fit=crop'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-black/40"></div>
+
+        <!-- Particles for Slide 4 -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+          <div class="particle particle-float" style="width: 60px; height: 60px; border: 2px solid #B89B5E; border-radius: 50%; top: 15%; left: 10%; animation-delay: 0s;"></div>
+          <div class="particle particle-float" style="width: 40px; height: 40px; border: 2px solid #B89B5E; border-radius: 50%; top: 60%; left: 85%; animation-delay: 3s;"></div>
+          <div class="particle particle-float" style="width: 30px; height: 30px; border: 2px solid #B89B5E; top: 70%; left: 15%; animation-delay: 6s;"></div>
+          <div class="particle particle-float" style="width: 50px; height: 50px; border: 2px solid #B89B5E; border-radius: 50%; top: 25%; left: 80%; animation-delay: 9s;"></div>
+        </div>
+
+        <!-- Content Overlay -->
+        <div class="absolute inset-0 flex items-center justify-center z-10">
+          <div class="text-center text-white max-w-3xl mx-auto px-4 parallax-text">
+            <!-- Animated Line Accent -->
+            <div class="line-accent mx-auto mb-6" style="height: 3px; width: 80px; background: linear-gradient(90deg, #B89B5E, transparent); margin-left: auto; margin-right: auto;"></div>
+
+            <!-- Category Label -->
+            <div class="fade-in-text">
+              <p class="text-[#B89B5E] font-semibold mb-3 text-sm tracking-widest uppercase">EPCM & Engineering</p>
+            </div>
+
+            <!-- Heading with Glow -->
+            <div class="fade-in-text industrial-glow p-4 rounded-lg" style="display: inline-block;">
+              <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#B89B5E]" style="letter-spacing: 0.05em;">Engineering The Future</h2>
+            </div>
+
+            <!-- Description -->
+            <div class="fade-in-text mt-6 max-w-2xl mx-auto">
+              <p class="text-lg md:text-xl text-gray-200 leading-relaxed drop-shadow-lg">Our EPCM capabilities cover concept development, engineering design, procurement, construction management, commissioning, and facility upgrades. We combine technical expertise with advanced project management systems to deliver cost-effective and high-quality results.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Arrows -->
+      <button class="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-[#B89B5E]/80 hover:bg-[#B89B5E] text-white font-bold text-xl transition hover:scale-110" onclick="prevSlide()">❮</button>
+      <button class="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-[#B89B5E]/80 hover:bg-[#B89B5E] text-white font-bold text-xl transition hover:scale-110" onclick="nextSlide()">❯</button>
+
+      <!-- Navigation Dots -->
+      <div class="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex gap-3 z-20">
+        <button class="carousel-dot w-3 h-3 rounded-full bg-[#B89B5E] transition-all cursor-pointer active" onclick="goToSlide(0)"></button>
+        <button class="carousel-dot w-3 h-3 rounded-full bg-white/40 transition-all cursor-pointer hover:bg-white/60" onclick="goToSlide(1)"></button>
+        <button class="carousel-dot w-3 h-3 rounded-full bg-white/40 transition-all cursor-pointer hover:bg-white/60" onclick="goToSlide(2)"></button>
+        <button class="carousel-dot w-3 h-3 rounded-full bg-white/40 transition-all cursor-pointer hover:bg-white/60" onclick="goToSlide(3)"></button>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 text-center">
+        <div class="scroll-indicator">
+          <svg class="w-6 h-6 mx-auto text-[#B89B5E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </div>
+        <p class="text-[#B89B5E] text-xs mt-2 opacity-75">Scroll to explore</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.carousel-dot');
+    const totalSlides = slides.length;
+
+    function showSlide(n) {
+      slides.forEach(slide => slide.classList.remove('opacity-100'));
+      slides.forEach(slide => slide.classList.add('opacity-0'));
+      dots.forEach(dot => {
+        dot.classList.remove('bg-[#B89B5E]');
+        dot.classList.add('bg-white/40');
+      });
+      
+      slides[n].classList.remove('opacity-0');
+      slides[n].classList.add('opacity-100');
+      dots[n].classList.remove('bg-white/40');
+      dots[n].classList.add('bg-[#B89B5E]');
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      showSlide(currentSlide);
+    }
+
+    function goToSlide(n) {
+      currentSlide = n;
+      showSlide(currentSlide);
+    }
+
+    // Auto-advance slides every 5 seconds
+    setInterval(nextSlide, 5000);
+  </script>
+
+  <!-- Mouse Parallax Effect -->
+  <script>
+    const parallaxElements = document.querySelectorAll('.parallax-text');
+    
+    document.addEventListener('mousemove', (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 20;
+      const y = (e.clientY / window.innerHeight - 0.5) * 20;
+      
+      parallaxElements.forEach(el => {
+        el.style.transform = `perspective(1000px) rotateY(${x}deg) rotateX(${-y}deg)`;
+      });
+    });
+
+    document.addEventListener('mouseleave', () => {
+      parallaxElements.forEach(el => {
+        el.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg)';
+      });
+    });
+  </script>
+  <!-- Animated Counters Section -->
+  <section class="py-16 bg-[#1E3A34] border-b border-[#234038]">
+    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div class="reveal">
+        <div class="text-4xl md:text-5xl font-extrabold text-[#ffd700] counter" data-target="15">0</div>
+        <div class="mt-2 text-gray-300 text-lg font-semibold">Years Experience</div>
+      </div>
+      <div class="reveal">
+        <div class="text-4xl md:text-5xl font-extrabold text-[#ffd700] counter" data-target="50">0</div>
+        <div class="mt-2 text-gray-300 text-lg font-semibold">Major Projects</div>
+      </div>
+      <div class="reveal">
+        <div class="text-4xl md:text-5xl font-extrabold text-[#ffd700] counter" data-target="100">0</div>
+        <div class="mt-2 text-gray-300 text-lg font-semibold">Skilled Workforce</div>
+      </div>
+      <div class="reveal">
+        <div class="text-4xl md:text-5xl font-extrabold text-[#ffd700] counter" data-target="7">0</div>
+        <div class="mt-2 text-gray-300 text-lg font-semibold">Industry Sectors</div>
+      </div>
+    </div>
+  </section>
+  <!-- ABOUT US SECTION -->
+  <section id="about" class="py-20 bg-[#111111] border-b border-[#1E3A34]">
+    <div class="max-w-5xl mx-auto px-4 text-center reveal">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#ffd700] mb-6">About Us</h2>
+      <p class="text-lg md:text-xl text-gray-200 leading-relaxed">
+        Verte Energies Limited is a fully indigenous Nigerian energy and engineering company incorporated under the Companies and Allied Matters Act (CAMA 2020). Our incorporation (RC 8114494) establishes us as a legitimate player within Nigeria’s oil, gas, and construction sectors, guided by a strong governance framework and compliance with the Nigerian Oil and Gas Industry Content Development (NOGICD) Act.<br><br>
+        Headquartered in Abuja, Verte Energies Limited was founded with the vision of bridging the gap between global engineering standards and local realities. The company focuses on delivering integrated energy solutions and infrastructure projects that support national growth and align with the Federal Government’s industrialisation agenda.<br><br>
+        Our registration with the Nigerian Oil and Gas Industry Service Providers (OGISP) platform affirms our competence to execute major projects within both upstream and downstream environments.
+      </p>
+    </div>
+  </section>
+  <!-- VISION SECTION -->
+  <section id="vision" class="py-20 bg-[#1E3A34] border-b border-[#234038]">
+    <div class="max-w-4xl mx-auto px-4 text-center reveal">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#ffd700] mb-6">Our Vision</h2>
+      <p class="text-lg md:text-xl text-gray-200 leading-relaxed">
+        To be a leading globally respected technology-driven indigenous company, delivering integrated energy, engineering, and infrastructure solutions tailored to meet the unique needs of our clients with a commitment to safety, quality, innovation, and sustainability.
+      </p>
+    </div>
+  </section>
+  <!-- MISSION SECTION -->
+  <section id="mission" class="py-20 bg-[#111111] border-b border-[#1E3A34]">
+    <div class="max-w-4xl mx-auto px-4 text-center reveal">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#ffd700] mb-6">Our Mission</h2>
+      <p class="text-lg md:text-xl text-gray-200 leading-relaxed">
+        To provide safe, efficient, and innovative engineering, procurement, and construction solutions that strengthen Africa’s energy and infrastructure systems while promoting local participation, environmental responsibility, and technological advancement.
+      </p>
+    </div>
+  </section>
+  <!-- CORE VALUES SECTION -->
+  <section id="values" class="py-20 bg-[#1E3A34] border-b border-[#234038]">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#ffd700] mb-10 reveal">Our Core Values</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Value Card Example -->
+        <div class="card-hover bg-[#111111] border border-[#1E3A34] rounded-xl p-8 shadow-lg reveal transition-all duration-500" style="animation-delay:0.1s">
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">Professionalism</h3>
+          <p class="text-gray-200">We uphold the highest standards of conduct, technical competence, and ethical behavior in all our operations and relationships.</p>
+        </div>
+        <div class="card-hover bg-[#0a192f] border border-[#1e293b] rounded-xl p-8 shadow-lg reveal transition-all duration-500" style="animation-delay:0.2s">
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">People</h3>
+          <p class="text-gray-200">We value our people, invest in their growth, and foster a culture of teamwork, respect, and empowerment.</p>
+        </div>
+        <div class="card-hover bg-[#0a192f] border border-[#1e293b] rounded-xl p-8 shadow-lg reveal transition-all duration-500" style="animation-delay:0.3s">
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">Integrity</h3>
+          <p class="text-gray-200">We act with honesty, transparency, and accountability, building trust with our clients, partners, and communities.</p>
+        </div>
+        <div class="card-hover bg-[#0a192f] border border-[#1e293b] rounded-xl p-8 shadow-lg reveal transition-all duration-500" style="animation-delay:0.4s">
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">Safety</h3>
+          <p class="text-gray-200">We prioritize the health and safety of our people, clients, and the environment in every project and activity.</p>
+        </div>
+        <div class="card-hover bg-[#0a192f] border border-[#1e293b] rounded-xl p-8 shadow-lg reveal transition-all duration-500" style="animation-delay:0.5s">
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">Innovation</h3>
+          <p class="text-gray-200">We embrace new ideas, technologies, and approaches to deliver superior solutions and drive continuous improvement.</p>
+        </div>
+        <div class="card-hover bg-[#0a192f] border border-[#1e293b] rounded-xl p-8 shadow-lg reveal transition-all duration-500" style="animation-delay:0.6s">
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">Excellence</h3>
+          <p class="text-gray-200">We strive for excellence in everything we do, exceeding expectations and delivering outstanding results.</p>
+        </div>
+        <div class="card-hover bg-[#0a192f] border border-[#1e293b] rounded-xl p-8 shadow-lg reveal transition-all duration-500" style="animation-delay:0.7s">
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">Sustainability</h3>
+          <p class="text-gray-200">We are committed to sustainable practices that protect the environment and create lasting value for future generations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- SERVICES SECTION -->
+  <section id="services" class="py-20 bg-[#111111] border-b border-[#1E3A34]">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#ffd700] mb-10 reveal">Our Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Service Card Example -->
+        <div class="card-hover bg-[#101c2c] border border-[#1e293b] rounded-xl p-8 shadow-lg reveal">
+          <img src="/images/services/engineering.png" alt="Oil & Gas Services" class="h-16 mx-auto mb-4" />
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">Oil & Gas Services</h3>
+          <ul class="text-gray-200 text-left list-disc list-inside">
+            <li>Upstream and downstream operations</li>
+            <li>Well design, drilling, completion, and workover</li>
+            <li>Reservoir evaluation and production optimization</li>
+            <li>Subsurface and surface facilities</li>
+            <li>Pipeline construction and maintenance</li>
+          </ul>
+        </div>
+        <div class="card-hover bg-[#1E3A34] border border-[#234038] rounded-xl p-8 shadow-lg reveal">
+          <img src="/images/service-epcm.png" alt="EPCM" class="h-16 mx-auto mb-4" />
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">EPCM</h3>
+          <ul class="text-gray-200 text-left list-disc list-inside">
+            <li>Engineering, Procurement, Construction & Management</li>
+            <li>Project management and delivery</li>
+            <li>Turnkey solutions for energy and infrastructure</li>
+            <li>Cost control and value engineering</li>
+          </ul>
+        </div>
+        <div class="card-hover bg-[#101c2c] border border-[#1e293b] rounded-xl p-8 shadow-lg reveal">
+          <img src="/images/service-civil.png" alt="Civil & Structural Engineering" class="h-16 mx-auto mb-4" />
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">Civil & Structural Engineering</h3>
+          <ul class="text-gray-200 text-left list-disc list-inside">
+            <li>Design and construction of civil infrastructure</li>
+            <li>Structural analysis and detailing</li>
+            <li>Roads, bridges, and buildings</li>
+            <li>Site development and earthworks</li>
+          </ul>
+        </div>
+        <div class="card-hover bg-[#101c2c] border border-[#1e293b] rounded-xl p-8 shadow-lg reveal">
+          <img src="/images/service-fabrication.png" alt="Fabrication & Mechanical Works" class="h-16 mx-auto mb-4" />
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">Fabrication & Mechanical Works</h3>
+          <ul class="text-gray-200 text-left list-disc list-inside">
+            <li>Steel fabrication and erection</li>
+            <li>Mechanical installation and maintenance</li>
+            <li>Pressure vessels and piping</li>
+            <li>Welding and NDT services</li>
+          </ul>
+        </div>
+        <div class="card-hover bg-[#101c2c] border border-[#1e293b] rounded-xl p-8 shadow-lg reveal">
+          <img src="/images/service-procurement.png" alt="Procurement & Technical Support" class="h-16 mx-auto mb-4" />
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">Procurement & Technical Support</h3>
+          <ul class="text-gray-200 text-left list-disc list-inside">
+            <li>Global sourcing and supply chain management</li>
+            <li>Technical advisory and support</li>
+            <li>Vendor qualification and inspection</li>
+            <li>Logistics and expediting</li>
+          </ul>
+        </div>
+        <div class="card-hover bg-[#101c2c] border border-[#1e293b] rounded-xl p-8 shadow-lg reveal">
+          <img src="/images/service-marine.png" alt="Marine Audit & Inspection Services" class="h-16 mx-auto mb-4" />
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">Marine Audit & Inspection Services</h3>
+          <ul class="text-gray-200 text-left list-disc list-inside">
+            <li>Marine vessel audit and inspection</li>
+            <li>Offshore safety and compliance</li>
+            <li>Marine logistics and support</li>
+            <li>Survey and certification</li>
+          </ul>
+        </div>
+        <div class="card-hover bg-[#101c2c] border border-[#1e293b] rounded-xl p-8 shadow-lg reveal">
+          <img src="/images/service-lab.png" alt="Laboratory & Testing Services" class="h-16 mx-auto mb-4" />
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">Laboratory & Testing Services</h3>
+          <ul class="text-gray-200 text-left list-disc list-inside">
+            <li>Material and product testing</li>
+            <li>Quality assurance and control</li>
+            <li>Calibration and certification</li>
+            <li>Environmental and analytical testing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- TECHNICAL CAPABILITIES SECTION -->
+  <section id="capabilities" class="py-20 bg-[#1E3A34] border-b border-[#234038]">
+    <div class="max-w-6xl mx-auto px-4 text-center reveal">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#ffd700] mb-8">Technical Capabilities</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+        <div>
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">HSE Philosophy</h3>
+          <p class="text-gray-200 mb-4">We operate with a strong Health, Safety, and Environmental (HSE) philosophy, ensuring the well-being of our people, clients, and the environment.</p>
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">ISO Certifications</h3>
+          <p class="text-gray-200 mb-4">Certified to international standards for quality, safety, and environmental management.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">Skilled Workforce</h3>
+          <p class="text-gray-200 mb-4">A highly skilled, multidisciplinary workforce with expertise across engineering, construction, and project management.</p>
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">BIM, AutoCAD, Primavera Integration</h3>
+          <p class="text-gray-200 mb-4">Advanced use of Building Information Modeling (BIM), AutoCAD, and Primavera for project planning, design, and execution.</p>
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">Engineering Disciplines</h3>
+          <p class="text-gray-200">Expertise in civil, structural, mechanical, electrical, and process engineering.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- REGULATORY COMPLIANCE SECTION -->
+  <section id="compliance" class="py-20 bg-[#111111] border-b border-[#1E3A34]">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#ffd700] mb-10 reveal">Regulatory Compliance</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="card-hover bg-[#1E3A34] border border-[#234038] rounded-xl p-8 shadow-lg reveal">
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">CAC</h3>
+          <p class="text-gray-200">RC 8114494</p>
+        </div>
+        <div class="card-hover bg-[#101c2c] border border-[#1e293b] rounded-xl p-8 shadow-lg reveal">
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">TIN</h3>
+          <p class="text-gray-200">32556913-0001</p>
+        </div>
+        <div class="card-hover bg-[#101c2c] border border-[#1e293b] rounded-xl p-8 shadow-lg reveal">
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">OGISP Registration</h3>
+          <p class="text-gray-200">Registered with Nigerian Oil and Gas Industry Service Providers platform</p>
+        </div>
+        <div class="card-hover bg-[#101c2c] border border-[#1e293b] rounded-xl p-8 shadow-lg reveal">
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">NOGICD Compliance</h3>
+          <p class="text-gray-200">Compliant with Nigerian Oil and Gas Industry Content Development Act</p>
+        </div>
+        <div class="card-hover bg-[#101c2c] border border-[#1e293b] rounded-xl p-8 shadow-lg reveal">
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">ISO Standards</h3>
+          <p class="text-gray-200">Certified to international ISO standards</p>
+        </div>
+        <div class="card-hover bg-[#101c2c] border border-[#1e293b] rounded-xl p-8 shadow-lg reveal">
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">Insurance Compliance</h3>
+          <p class="text-gray-200">Fully insured for all operations</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- CORPORATE GOVERNANCE SECTION -->
+  <section id="governance" class="py-20 bg-[#1E3A34] border-b border-[#234038]">
+    <div class="max-w-5xl mx-auto px-4 text-center reveal">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#ffd700] mb-8">Corporate Governance</h2>
+      <p class="text-lg md:text-xl text-gray-200 leading-relaxed mb-6">
+        Verte Energies Limited is committed to the highest standards of corporate governance, accountability, and transparency. Our governance philosophy is built on a robust management structure, clear lines of responsibility, and a culture of ethical leadership. We ensure compliance with all regulatory requirements and maintain open communication with stakeholders to foster trust and long-term value.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+        <div>
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">Accountability & Transparency</h3>
+          <p class="text-gray-200 mb-4">We maintain transparent reporting, ethical decision-making, and clear accountability at all levels of the organization.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">Management Structure</h3>
+          <p class="text-gray-200 mb-4">Our management structure is designed to ensure effective oversight, risk management, and strategic direction.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- LEADERSHIP TEAM SECTION -->
+  <section id="team" class="py-20 bg-[#111111] border-b border-[#1E3A34]">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#ffd700] mb-10 reveal">Leadership Team</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Team Member Card Example -->
+        <div class="card-hover bg-[#101c2c] border border-[#1e293b] rounded-xl p-8 shadow-lg reveal flex flex-col items-center">
+          <img src="/vertet/verte/public/images/team/Anthony Nwachukwu Nwokoro.png" alt="Anthony Nwachukwu Nwokoro" class="h-24 w-24 rounded-full mb-4 object-cover bg-[#1e293b]" />
+          <h3 class="text-lg font-bold text-[#ffd700] mb-1">Anthony Nwachukwu Nwokoro</h3>
+          <p class="text-gray-300 mb-2">Managing Director/CEO</p>
+          <p class="text-gray-200 text-sm">A seasoned energy executive with extensive experience in oil & gas, engineering, and infrastructure development.</p>
+        </div>
+        <div class="card-hover bg-[#1E3A34] border border-[#234038] rounded-xl p-8 shadow-lg reveal flex flex-col items-center">
+          <img src="/vertet/verte/public/images/team/olusayonon executive director.png" alt="Engr. (Dr.) Olusayo Ademola Ajayi" class="h-24 w-24 rounded-full mb-4 object-cover bg-[#1e293b]" />
+          <h3 class="text-lg font-bold text-[#ffd700] mb-1">Engr. (Dr.) Olusayo Ademola Ajayi</h3>
+          <p class="text-gray-300 mb-2">Executive Director, Engineering</p>
+          <p class="text-gray-200 text-sm">A chartered engineer and project management expert with a track record in major EPCM projects.</p>
+        </div>
+        <div class="card-hover bg-[#101c2c] border border-[#1e293b] rounded-xl p-8 shadow-lg reveal flex flex-col items-center">
+          <img src="/images/team-felix.png" alt="Felix Radizi" class="h-24 w-24 rounded-full mb-4 object-cover bg-[#1e293b]" />
+          <h3 class="text-lg font-bold text-[#ffd700] mb-1">Felix Radizi</h3>
+          <p class="text-gray-300 mb-2">Director, Operations</p>
+          <p class="text-gray-200 text-sm">Expert in operations management, fabrication, and technical support for energy projects.</p>
+        </div>
+        <div class="card-hover bg-[#101c2c] border border-[#1e293b] rounded-xl p-8 shadow-lg reveal flex flex-col items-center">
+          <img src="/images/team-ebele.png" alt="Ebele Ndukwe Radizi" class="h-24 w-24 rounded-full mb-4 object-cover bg-[#1e293b]" />
+          <h3 class="text-lg font-bold text-[#ffd700] mb-1">Ebele Ndukwe Radizi</h3>
+          <p class="text-gray-300 mb-2">Director, Corporate Services</p>
+          <p class="text-gray-200 text-sm">Specialist in corporate governance, compliance, and stakeholder engagement.</p>
+        </div>
+        <div class="card-hover bg-[#101c2c] border border-[#1e293b] rounded-xl p-8 shadow-lg reveal flex flex-col items-center">
+          <img src="/images/team-adebola.png" alt="Adebola Evelyn Owede" class="h-24 w-24 rounded-full mb-4 object-cover bg-[#1e293b]" />
+          <h3 class="text-lg font-bold text-[#ffd700] mb-1">Adebola Evelyn Owede</h3>
+          <p class="text-gray-300 mb-2">Director, Finance</p>
+          <p class="text-gray-200 text-sm">Finance professional with expertise in financial management and strategic planning.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- SUSTAINABILITY SECTION -->
+  <section id="sustainability" class="py-20 bg-[#1E3A34] border-b border-[#234038]">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#ffd700] mb-10 reveal">Sustainability</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="card-hover bg-[#0a192f] border border-[#1e293b] rounded-xl p-8 shadow-lg reveal">
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">Environmental Stewardship</h3>
+          <p class="text-gray-200">We are dedicated to minimizing our environmental footprint and promoting responsible resource management.</p>
+        </div>
+        <div class="card-hover bg-[#111111] border border-[#1E3A34] rounded-xl p-8 shadow-lg reveal">
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">Human Capital Development</h3>
+          <p class="text-gray-200">We invest in the growth and development of our people, empowering them to reach their full potential.</p>
+        </div>
+        <div class="card-hover bg-[#0a192f] border border-[#1e293b] rounded-xl p-8 shadow-lg reveal">
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">Community Relations</h3>
+          <p class="text-gray-200">We build strong relationships with host communities, supporting local development and social responsibility.</p>
+        </div>
+        <div class="card-hover bg-[#0a192f] border border-[#1e293b] rounded-xl p-8 shadow-lg reveal">
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">Governance & Accountability</h3>
+          <p class="text-gray-200">We uphold the highest standards of governance, transparency, and accountability in all our operations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- INTERNATIONAL PARTNERSHIPS & FUTURE OUTLOOK SECTION -->
+  <section id="partnerships" class="py-20 bg-[#111111] border-b border-[#1E3A34]">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#ffd700] mb-10 reveal">International Partnerships & Future Outlook</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="card-hover bg-[#1E3A34] border border-[#234038] rounded-xl p-8 shadow-lg reveal">
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">Regional Expansion</h3>
+          <p class="text-gray-200">Expanding operations across West Africa and beyond.</p>
+        </div>
+        <div class="card-hover bg-[#101c2c] border border-[#1e293b] rounded-xl p-8 shadow-lg reveal">
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">Renewable Energy</h3>
+          <p class="text-gray-200">Investing in renewable energy projects and sustainable solutions.</p>
+        </div>
+        <div class="card-hover bg-[#101c2c] border border-[#1e293b] rounded-xl p-8 shadow-lg reveal">
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">ISO Renewals</h3>
+          <p class="text-gray-200">Continuous improvement and renewal of ISO certifications.</p>
+        </div>
+        <div class="card-hover bg-[#101c2c] border border-[#1e293b] rounded-xl p-8 shadow-lg reveal">
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">Digital Monitoring Systems</h3>
+          <p class="text-gray-200">Implementing advanced digital monitoring and control systems.</p>
+        </div>
+        <div class="card-hover bg-[#101c2c] border border-[#1e293b] rounded-xl p-8 shadow-lg reveal">
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">Global Partnerships</h3>
+          <p class="text-gray-200">Building strategic alliances with leading international partners.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="py-20 bg-[#1E3A34] border-b border-[#234038]">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#ffd700] mb-10 reveal">Contact Us</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+        <div class="card-hover bg-[#111111] border border-[#1E3A34] rounded-xl p-8 shadow-lg reveal">
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">Head Office</h3>
+          <p class="text-gray-200">Qualitrend Residence 1003, Bala Muhammed Way, Guzape, Abuja.</p>
+        </div>
+        <div class="card-hover bg-[#0a192f] border border-[#1e293b] rounded-xl p-8 shadow-lg reveal">
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">Lagos Office</h3>
+          <p class="text-gray-200">17 Amodu Tijani Close, Victoria Island, Lagos.</p>
+        </div>
+        <div class="card-hover bg-[#0a192f] border border-[#1e293b] rounded-xl p-8 shadow-lg reveal">
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">Enugu Office</h3>
+          <p class="text-gray-200">Plot C 14 & 15 Old Airport Road, Emene, Enugu State.</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+        <div class="card-hover bg-[#1E3A34] border border-[#234038] rounded-xl p-8 shadow-lg reveal flex flex-col items-center">
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">Email</h3>
+          <a href="mailto:info@verteenergies.com" class="text-[#ffd700] font-semibold">info@verteenergies.com</a>
+        </div>
+        <div class="card-hover bg-[#101c2c] border border-[#1e293b] rounded-xl p-8 shadow-lg reveal flex flex-col items-center">
+          <h3 class="text-xl font-bold text-[#ffd700] mb-2">Phone</h3>
+          <p class="text-[#ffd700] font-semibold">+234 806 388 5724<br>+234 803 351 4867</p>
+        </div>
+      </div>
+      <div class="mb-10 reveal">
+        <a href="http://www.verteenergies.com" class="text-[#ffd700] font-semibold underline">www.verteenergies.com</a>
+      </div>
+      <div class="w-full h-64 bg-[#234038] rounded-xl flex items-center justify-center text-gray-400 text-lg font-semibold reveal">
+        [Map Placeholder]
+      </div>
+    </div>
+  </section>
+  <!-- FOOTER -->
+  <footer class="bg-[#111111] py-8 border-t border-[#1E3A34]">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <img src="/images/logo-placeholder.png" alt="Verte Energies Logo" class="h-8 w-8 rounded-full bg-[#1e293b] object-cover" />
+        <span class="text-lg font-bold text-[#B89B5E]">Verte Energies Limited</span>
+      </div>
+      <ul class="flex gap-6 text-[#F5F5F5] text-sm">
+        <li><a href="#about" class="hover:text-[#ffd700] transition">About</a></li>
+        <li><a href="#services" class="hover:text-[#ffd700] transition">Services</a></li>
+        <li><a href="#team" class="hover:text-[#ffd700] transition">Leadership</a></li>
+        <li><a href="#contact" class="hover:text-[#ffd700] transition">Contact</a></li>
+      </ul>
+      <div class="flex gap-4">
+        <a href="#" class="text-[#F5F5F5] hover:text-[#B89B5E]" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 11.28h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.89v1.36h.04c.4-.75 1.37-1.54 2.82-1.54 3.01 0 3.57 1.98 3.57 4.56v5.62z"/></svg></a>
+        <a href="#" class="text-[#F5F5F5] hover:text-[#B89B5E]" aria-label="Twitter"><svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6"><path d="M24 4.557a9.93 9.93 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724c-.951.564-2.005.974-3.127 1.195a4.92 4.92 0 0 0-8.384 4.482c-4.086-.205-7.713-2.164-10.141-5.144a4.822 4.822 0 0 0-.666 2.475c0 1.708.87 3.216 2.188 4.099a4.904 4.904 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.936 4.936 0 0 1-2.224.084c.627 1.956 2.444 3.377 4.6 3.417a9.867 9.867 0 0 1-6.102 2.104c-.396 0-.787-.023-1.175-.069a13.945 13.945 0 0 0 7.548 2.212c9.057 0 14.009-7.513 14.009-14.009 0-.213-.005-.425-.014-.636a10.012 10.012 0 0 0 2.457-2.548z"/></svg></a>
+        <a href="#" class="text-[#F5F5F5] hover:text-[#B89B5E]" aria-label="Facebook"><svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6"><path d="M22.675 0h-21.35c-.733 0-1.325.592-1.325 1.326v21.348c0 .733.592 1.326 1.325 1.326h11.495v-9.294h-3.128v-3.622h3.128v-2.672c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.311h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.326v-21.349c0-.733-.593-1.325-1.326-1.325z"/></svg></a>
+      </div>
+    </div>
+    <div class="text-center text-gray-500 text-xs mt-4">&copy; 2026 Verte Energies Limited. All rights reserved.</div>
+  </footer>
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
