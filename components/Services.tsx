@@ -23,7 +23,7 @@ const Services: React.FC = () => {
           <div className="max-w-2xl">
             <p className="text-xs font-semibold tracking-[0.22em] uppercase text-verte-gold mb-4">Capabilities</p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight">
-              Services aligned with the company profile.
+              Integrated energy & infrastructure solutions delivering operational excellence.
             </h2>
           </div>
           <a
