@@ -1,8 +1,16 @@
 /* Custom styles for Verte Energies Limited website */
 
+:root {
+  --verte-green: #1E3A34;
+  --verte-green-deep: #234038;
+  --verte-black: #111111;
+  --verte-white: #F5F5F5;
+  --verte-gold: #B89B5E;
+}
+
 /* Preloader styles */
 #preloader {
-  background: #0a192f;
+  background: var(--verte-black);
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   z-index: 9999;
@@ -13,17 +21,17 @@
 
 /* Example for dark overlay */
 .hero-overlay {
-  background: rgba(10, 25, 47, 0.7);
+  background: rgba(17, 17, 17, 0.72);
 }
 
 /* Card hover effect */
 .card-hover:hover {
-  box-shadow: 0 8px 32px 0 rgba(16, 24, 40, 0.25);
-  transform: translateY(-4px) scale(1.02);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  box-shadow: 0 12px 28px rgba(17, 17, 17, 0.18);
+  transform: translateY(-2px);
+  transition: all 0.2s ease;
 }
 
 /* Sticky navbar shadow */
 .sticky-nav {
-  box-shadow: 0 2px 8px 0 rgba(16, 24, 40, 0.10);
+  box-shadow: 0 2px 12px rgba(17, 17, 17, 0.18);
 }
