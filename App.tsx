@@ -5,7 +5,6 @@ import About from './components/About';
 import VisionMission from './components/VisionMission';
 import CoreValues from './components/CoreValues';
 import Services from './components/Services';
-import Growth from './components/Growth';
 import Contact from './components/Contact';
 import Team from './components/Team';
 import ScrollToTopButton from './components/ScrollToTopButton';
@@ -21,7 +20,6 @@ function App() {
         <CoreValues />
         <Team />
         <Services />
-        <Growth />
         <Contact />
       </main>
       <ScrollToTopButton />
