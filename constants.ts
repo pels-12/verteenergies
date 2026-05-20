@@ -36,7 +36,7 @@ export const TEAM_MEMBERS = [
     bio: "Leads strategy, stakeholder engagement, and project execution across energy, engineering, and infrastructure mandates."
   },
   {
-    name: "Engr. (Dr.) Olusayo Ademola Ajayi",
+    name: "Olusayo Ademola Ajayi",
     role: "Executive Director, Engineering",
     image: "/images/team/olusayonon executive director.png",
     bio: "Guides engineering delivery, quality systems, and technical assurance for multidisciplinary projects."
