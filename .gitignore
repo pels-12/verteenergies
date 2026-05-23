@@ -1,2 +1,5 @@
 dist/
 vertet/
+node_modules/
+.vite/
+*.log
