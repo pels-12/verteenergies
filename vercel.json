@@ -1,0 +1,5 @@
+{
+  "buildCommand": "cd vertet/verte && npm install && npm run build",
+  "outputDirectory": "vertet/verte/dist",
+  "framework": "vite"
+}
