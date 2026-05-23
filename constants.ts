@@ -31,33 +31,33 @@ export const NAV_ITEMS: NavItem[] = [
 export const TEAM_MEMBERS = [
   {
     name: "Anthony Nwachukwu Nwokoro",
-    role: "Managing Director / CEO",
+    role: "CHAIRMAN / CHIEF EXECUTIVE OFFICER (CEO)",
     image: "/images/team/Anthony Nwachukwu Nwokoro.png",
-    bio: "Leads strategy, stakeholder engagement, and project execution across energy, engineering, and infrastructure mandates."
+    bio: "A seasoned energy executive with extensive experience in oil and gas, engineering, and infrastructure development."
   },
   {
     name: "Olusayo Ademola Ajayi",
-    role: "Executive Director, Engineering",
+    role: "NON-EXECUTIVE DIRECTOR",
     image: "/images/team/olusayonon executive director.png",
-    bio: "Guides engineering delivery, quality systems, and technical assurance for multidisciplinary projects."
+    bio: "A chartered engineer and project management expert with a track record in major EPCM projects."
   },
   {
     name: "Felix Radizi",
-    role: "Director, Operations",
+    role: "NON-EXECUTIVE DIRECTOR",
     image: "/images/team/felix.png",
-    bio: "Oversees field operations, fabrication support, logistics coordination, and operational readiness."
+    bio: "Expert in operations management, fabrication, and technical support for energy projects."
   },
   {
     name: "Ebele Ndukwe Radizi",
-    role: "Company Secretary / Chief Legal Officer",
+    role: "COMPANY SECRETARY/CHIEF LEGAL OFFICER",
     image: "/images/team/Ebele company sec.png",
-    bio: "Leads corporate governance, legal advisory, regulatory compliance, and stakeholder communication."
+    bio: "Specialist in corporate governance, compliance, and stakeholder engagement."
   },
   {
     name: "Adebola Evelyn Owede",
-    role: "Chief Finance Officer",
+    role: "NON-EXECUTIVE DIRECTOR",
     image: "/images/team/adebola chief finance.png",
-    bio: "CFA charterholder and senior finance professional with experience across treasury, capital markets, financial modelling, and strategic finance."
+    bio: "Finance professional with expertise in financial management and strategic planning."
   }
 ];
 
@@ -186,7 +186,7 @@ export const CONTACT_INFO = {
     }
   ],
   phone: "+234 806 388 5724",
-  phones: ["+234 806 388 5724", "+234 803 351 4867"],
+  phones: ["+234 806 388 5724", "+234 803 321 4867"],
   email: "info@verteenergies.com",
   website: "www.verteenergies.com"
 };

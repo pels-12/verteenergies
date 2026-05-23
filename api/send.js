@@ -102,7 +102,7 @@ export default async function handler(req, res) {
     }
 
     const fromAddress = process.env.FROM_EMAIL || process.env.SMTP_USER;
-    const toAddress = process.env.TO_EMAIL || 'info@windekoilandgasltd.com';
+    const toAddress = process.env.TO_EMAIL || 'info@verteenergies.com';
 
     const mailOptions = {
       from: `"Windek Website" <${fromAddress}>`,
