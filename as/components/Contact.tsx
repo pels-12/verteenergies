@@ -135,9 +135,46 @@ const Contact: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-5 pt-8 border-t border-verte-gold/25 text-sm text-verte-white/50">
-          <p>&copy; {new Date().getFullYear()} Verte Energies Limited. RC 8114494. Developed by Pelinks.</p>
-          <p>Oil, gas, engineering, procurement, inspection, and infrastructure solutions.</p>
+        <div className="border-t border-verte-gold/25 pt-12 grid gap-8 md:grid-cols-[1.2fr_0.8fr_0.8fr]">
+          <div>
+            <a href="/" className="inline-flex items-center hover:opacity-80 transition-opacity">
+              <img
+                src="/big logo.svg"
+                alt="Verte Energies"
+                className="h-12 w-auto max-w-[132px] brightness-0 invert"
+              />
+            </a>
+            <p className="mt-5 max-w-md text-sm leading-6 text-verte-white/65">
+              Oil, gas, engineering, procurement, inspection, and infrastructure solutions delivered with safety,
+              quality, and accountability.
+            </p>
+          </div>
+          <div>
+            <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-verte-gold">Pages</h2>
+            <div className="mt-4 grid gap-2 text-sm text-verte-white/70">
+              <a href="/" className="hover:text-verte-gold transition-colors">Home</a>
+              <a href="/about.html" className="hover:text-verte-gold transition-colors">About</a>
+              <a href="/leadership.html" className="hover:text-verte-gold transition-colors">Leadership Team</a>
+              <a href="/services.html" className="hover:text-verte-gold transition-colors">Services</a>
+              <a href="/contact.html" className="hover:text-verte-gold transition-colors">Contact</a>
+            </div>
+          </div>
+          <div>
+            <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-verte-gold">Contact</h2>
+            <div className="mt-4 space-y-2 text-sm leading-6 text-verte-white/70">
+              <a href={`mailto:${CONTACT_INFO.email}`} className="block hover:text-verte-gold transition-colors">
+                {CONTACT_INFO.email}
+              </a>
+              <p>{CONTACT_INFO.phones.map((phone) => <React.Fragment key={phone}>{phone}<br /></React.Fragment>)}</p>
+              <a href="/contact.html" className="inline-flex mt-2 font-semibold text-verte-gold hover:text-verte-white transition-colors">
+                Get In Touch
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-12 border-t border-verte-gold/20 px-4 py-5 text-center text-xs text-verte-white/50">
+          &copy; {new Date().getFullYear()} Verte Energies Limited. RC 8114494. Developed by Pelinks.
         </div>
       </div>
 

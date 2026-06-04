@@ -5,7 +5,7 @@ const NAV_ITEMS = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about.html' },
   { label: 'Services', href: '/services.html' },
-  { label: 'Projects', href: '/projects.html' },
+  { label: 'Projects', href: '#' },
   { label: 'Contact', href: '/contact.html' },
 ];
 
@@ -23,6 +23,12 @@ const Header: React.FC = () => {
   }, []);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href === '#') {
+      e.preventDefault();
+      setIsOpen(false);
+      return;
+    }
+
     if (!href.startsWith('#')) {
       setIsOpen(false);
       return;
