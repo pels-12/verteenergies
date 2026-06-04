@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, Download } from 'lucide-react';
-import { NAV_ITEMS } from '../constants';
+
+const NAV_ITEMS = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about.html' },
+  { label: 'Services', href: '/services.html' },
+  { label: 'Projects', href: '/projects.html' },
+  { label: 'Contact', href: '/contact.html' },
+];
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,6 +23,11 @@ const Header: React.FC = () => {
   }, []);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (!href.startsWith('#')) {
+      setIsOpen(false);
+      return;
+    }
+
     e.preventDefault();
     const targetId = href.replace('#', '');
     const element = document.getElementById(targetId);
@@ -33,10 +45,10 @@ const Header: React.FC = () => {
   };
 
   const aboutSubmenu = [
-    { label: 'About Us', href: '#about' },
-    { label: 'Vision & Mission', href: '#vision' },
-    { label: 'Core Values', href: '#values' },
-    { label: 'Leadership Team', href: '#team' }
+    { label: 'About Us', href: '/about.html' },
+    { label: 'Vision & Mission', href: '/about.html#vision' },
+    { label: 'Core Values', href: '/about.html#values' },
+    { label: 'Leadership Team', href: '/leadership.html' }
   ];
 
   return (
@@ -50,7 +62,7 @@ const Header: React.FC = () => {
           {/* Logo Section */}
           <div 
             className="flex-shrink-0 flex items-center gap-3 group cursor-pointer hover:opacity-80 transition-opacity" 
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            onClick={() => { window.location.href = '/'; }}
           >
             <img 
               src="/big logo.svg" 
@@ -109,8 +121,8 @@ const Header: React.FC = () => {
               Profile
             </a>
             <a
-              href="#contact"
-              onClick={(e) => handleNavClick(e, '#contact')}
+              href="/contact.html"
+              onClick={(e) => handleNavClick(e, '/contact.html')}
               className="hidden md:inline-flex px-5 py-2.5 bg-verte-gold text-verte-black text-sm font-semibold hover:bg-[#c4aa70] transition-colors duration-200"
             >
               Get In Touch
@@ -178,8 +190,8 @@ const Header: React.FC = () => {
             Download Profile
           </a>
           <a
-            href="#contact"
-            onClick={(e) => handleNavClick(e, '#contact')}
+            href="/contact.html"
+            onClick={(e) => handleNavClick(e, '/contact.html')}
             className="block px-4 py-3 bg-verte-gold text-verte-black text-base font-semibold text-center hover:bg-[#c4aa70] transition-colors duration-200"
           >
             Get In Touch

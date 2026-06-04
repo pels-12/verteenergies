@@ -47,9 +47,9 @@ const Contact: React.FC = () => {
                 </div>
               </div>
               {/* Contact Details - Simple Cards */}
-              <div className="grid md:grid-cols-3 gap-4 mt-8">
+              <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-4 mt-8">
                 {/* Email Card */}
-                <div className="border border-verte-gold/30 p-6">
+                <div className="min-w-0 border border-verte-gold/30 p-6">
                   <div className="flex items-center gap-3 mb-4">
                     <Mail className="h-5 w-5 text-verte-gold" strokeWidth={2} />
                     <p className="text-xs font-bold text-verte-gold uppercase tracking-wider">Email</p>
@@ -63,7 +63,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 {/* Phone Card */}
-                <div className="border border-verte-gold/30 p-6">
+                <div className="min-w-0 border border-verte-gold/30 p-6">
                   <div className="flex items-center gap-3 mb-4">
                     <Phone className="h-5 w-5 text-verte-gold" strokeWidth={2} />
                     <p className="text-xs font-bold text-verte-gold uppercase tracking-wider">Phone</p>
@@ -82,7 +82,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 {/* Website Card */}
-                <div className="border border-verte-gold/30 p-6">
+                <div className="min-w-0 border border-verte-gold/30 p-6">
                   <div className="flex items-center gap-3 mb-4">
                     <Globe2 className="h-5 w-5 text-verte-gold" strokeWidth={2} />
                     <p className="text-xs font-bold text-verte-gold uppercase tracking-wider">Website</p>
@@ -91,7 +91,7 @@ const Contact: React.FC = () => {
                     href={`https://${CONTACT_INFO.website}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm font-semibold text-verte-white hover:text-verte-gold transition-colors"
+                    className="block max-w-full break-all text-xs font-semibold leading-5 text-verte-white hover:text-verte-gold transition-colors"
                   >
                     {CONTACT_INFO.website}
                   </a>
@@ -136,7 +136,7 @@ const Contact: React.FC = () => {
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-5 pt-8 border-t border-verte-gold/25 text-sm text-verte-white/50">
-          <p>&copy; {new Date().getFullYear()} Verte Energies Limited. RC 8114494.</p>
+          <p>&copy; {new Date().getFullYear()} Verte Energies Limited. RC 8114494. Developed by Pelinks.</p>
           <p>Oil, gas, engineering, procurement, inspection, and infrastructure solutions.</p>
         </div>
       </div>
