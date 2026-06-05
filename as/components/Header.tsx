@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, Download } from 'lucide-react';
 
 const NAV_ITEMS = [
@@ -119,7 +119,7 @@ const Header: React.FC = () => {
           {/* Right side - CTA + Mobile menu */}
           <div className="flex items-center gap-3">
             <a
-              href="/Verte-Energies-Company-Profile.pdf"
+              href="/Verte%20Energies%20Company%20Profile.pdf"
               download
               className="hidden lg:inline-flex px-4 py-2.5 border border-verte-gold/60 text-verte-white text-sm font-semibold hover:border-verte-gold hover:text-verte-gold transition-colors duration-200 items-center gap-2"
             >
@@ -188,7 +188,7 @@ const Header: React.FC = () => {
             );
           })}
           <a
-            href="/Verte-Energies-Company-Profile.pdf"
+            href="/Verte%20Energies%20Company%20Profile.pdf"
             download
             className="flex items-center justify-center gap-2 px-4 py-3 mt-4 border border-verte-gold/40 text-verte-white text-base font-semibold text-center hover:text-verte-gold hover:border-verte-gold transition-colors duration-200"
           >
