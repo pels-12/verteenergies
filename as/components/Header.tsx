@@ -1,13 +1,6 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
-
-const NAV_ITEMS = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/about.html' },
-  { label: 'Services', href: '/services.html' },
-  { label: 'Projects', href: '#' },
-  { label: 'Contact', href: '/contact.html' },
-];
+import { NAV_ITEMS } from '../constants';
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,17 +16,6 @@ const Header: React.FC = () => {
   }, []);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href === '#') {
-      e.preventDefault();
-      setIsOpen(false);
-      return;
-    }
-
-    if (!href.startsWith('#')) {
-      setIsOpen(false);
-      return;
-    }
-
     e.preventDefault();
     const targetId = href.replace('#', '');
     const element = document.getElementById(targetId);
@@ -51,10 +33,10 @@ const Header: React.FC = () => {
   };
 
   const aboutSubmenu = [
-    { label: 'About Us', href: '/about.html' },
-    { label: 'Vision & Mission', href: '/about.html#vision' },
-    { label: 'Core Values', href: '/about.html#values' },
-    { label: 'Leadership Team', href: '/leadership.html' }
+    { label: 'About Us', href: '#about' },
+    { label: 'Vision & Mission', href: '#vision' },
+    { label: 'Core Values', href: '#values' },
+    { label: 'Leadership Team', href: '#team' }
   ];
 
   return (
@@ -68,7 +50,7 @@ const Header: React.FC = () => {
           {/* Logo Section */}
           <div 
             className="flex-shrink-0 flex items-center gap-3 group cursor-pointer hover:opacity-80 transition-opacity" 
-            onClick={() => { window.location.href = '/'; }}
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             <img 
               src="/big logo.svg" 
@@ -119,8 +101,8 @@ const Header: React.FC = () => {
           {/* Right side - CTA + Mobile menu */}
           <div className="flex items-center gap-3">
             <a
-              href="/contact.html"
-              onClick={(e) => handleNavClick(e, '/contact.html')}
+              href="#contact"
+              onClick={(e) => handleNavClick(e, '#contact')}
               className="hidden md:inline-flex px-5 py-2.5 bg-verte-gold text-verte-black text-sm font-semibold hover:bg-[#c4aa70] transition-colors duration-200"
             >
               Get In Touch
@@ -180,8 +162,8 @@ const Header: React.FC = () => {
             );
           })}
           <a
-            href="/contact.html"
-            onClick={(e) => handleNavClick(e, '/contact.html')}
+            href="#contact"
+            onClick={(e) => handleNavClick(e, '#contact')}
             className="block px-4 py-3 bg-verte-gold text-verte-black text-base font-semibold text-center hover:bg-[#c4aa70] transition-colors duration-200"
           >
             Get In Touch
