@@ -1,4 +1,5 @@
 import React from 'react';
+import { Linkedin } from 'lucide-react';
 import { TEAM_MEMBERS } from '../constants';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
@@ -27,6 +28,15 @@ const Team: React.FC = () => {
                   <p className="text-xs font-semibold text-verte-gold uppercase tracking-widest mb-2">{member.role}</p>
                   <h3 className="text-lg font-bold text-verte-black mb-3 leading-snug">{member.name}</h3>
                   <p className="text-sm leading-6 text-slate-600">{member.bio}</p>
+                  <a
+                    href={member.linkedIn}
+                    target={member.linkedIn === '#' ? undefined : '_blank'}
+                    rel={member.linkedIn === '#' ? undefined : 'noopener noreferrer'}
+                    className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-verte-gold hover:text-verte-black transition-colors"
+                  >
+                    <Linkedin className="h-4 w-4" strokeWidth={2} />
+                    LinkedIn
+                  </a>
                 </div>
               </article>
             );

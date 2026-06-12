@@ -16,6 +16,11 @@ const Header: React.FC = () => {
   }, []);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (!href.startsWith('#')) {
+      setIsOpen(false);
+      return;
+    }
+
     e.preventDefault();
     const targetId = href.replace('#', '');
     const element = document.getElementById(targetId);
@@ -36,7 +41,7 @@ const Header: React.FC = () => {
     { label: 'About Us', href: '#about' },
     { label: 'Vision & Mission', href: '#vision' },
     { label: 'Core Values', href: '#values' },
-    { label: 'Leadership Team', href: '#team' }
+    { label: 'Leadership Team', href: '/leadership.html' }
   ];
 
   return (
