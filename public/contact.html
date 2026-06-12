@@ -1,47 +1,64 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us | Verte Energies Limited</title>
   <meta name="description" content="Contact Verte Energies Limited offices in Abuja, Lagos, and Enugu." />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>body { font-family: 'Inter', sans-serif; background: #111111; color: #F5F5F5; }</style>
 </head>
 <body>
-  <header class="fixed top-0 left-0 w-full z-50 bg-[#111111]/90 backdrop-blur border-b border-[#1E3A34]">
-    <nav class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
-      <a href="/"><img src="/big logo.svg" alt="Verte Energies Logo" class="h-12 w-auto max-w-xs" style="filter: brightness(0) invert(1);" /></a>
-      <ul class="hidden md:flex gap-8 text-base font-semibold items-center">
-        <li><a href="/" class="hover:text-[#B89B5E] transition">Home</a></li>
-        <li class="relative group">
-          <a href="/about.html" class="hover:text-[#ffd700] transition inline-flex items-center gap-2">About <span>v</span></a>
-          <div class="absolute left-0 top-full hidden min-w-52 pt-4 group-hover:block">
-            <div class="rounded border border-[#284c43] bg-[#111111] p-2 shadow-2xl">
-              <a href="/about.html" class="block rounded px-4 py-3 text-sm text-gray-200 hover:bg-[#1E3A34] hover:text-[#ffd700] transition">About Us</a>
-              <a href="/leadership.html" class="block rounded px-4 py-3 text-sm text-gray-200 hover:bg-[#1E3A34] hover:text-[#ffd700] transition">Leadership Team</a>
+  <nav class="fixed w-full z-50 bg-[#111111]/78 py-5 backdrop-blur-xl transition-all duration-300 ease-in-out">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <a href="/" class="flex-shrink-0 flex items-center gap-3 hover:opacity-80 transition-opacity"><img src="./big%20logo.svg" alt="Verte Energies" class="h-12 w-auto max-w-[132px]" style="filter: brightness(0) invert(1);" /></a>
+        <div class="hidden md:flex items-center space-x-1">
+          <a href="/" class="text-sm font-medium text-white hover:text-[#B89B5E] transition-colors px-4 py-2">Home</a>
+          <div class="relative group">
+            <a href="./about.html" class="text-sm font-medium text-white hover:text-[#B89B5E] transition-colors px-4 py-2 flex items-center gap-1">About <span class="transition-transform group-hover:rotate-180">v</span></a>
+            <div class="absolute left-0 mt-2 w-56 bg-[#111111]/95 backdrop-blur-xl border border-[#B89B5E]/20 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2">
+              <a href="./about.html" class="block px-4 py-2 text-sm text-white hover:text-[#B89B5E] hover:bg-white/5 transition-colors">About Us</a>
+              <a href="./about.html#vision" class="block px-4 py-2 text-sm text-white hover:text-[#B89B5E] hover:bg-white/5 transition-colors">Vision &amp; Mission</a>
+              <a href="./about.html#values" class="block px-4 py-2 text-sm text-white hover:text-[#B89B5E] hover:bg-white/5 transition-colors">Core Values</a>
+              <a href="./leadership.html" class="block px-4 py-2 text-sm text-white hover:text-[#B89B5E] hover:bg-white/5 transition-colors">Leadership Team</a>
             </div>
           </div>
-        </li>
-        <li><a href="/services.html" class="hover:text-[#ffd700] transition">Services</a></li>
-        <li><a href="/contact.html" class="text-[#ffd700] transition">Contact</a></li>
-      </ul>
-      <a href="/contact.html" class="hidden md:inline-flex bg-[#B89B5E] text-[#111111] font-semibold px-5 py-2 rounded-sm hover:bg-[#d4af37] transition">Get In Touch</a>
-    </nav>
-  </header>
+          <a href="./services.html" class="text-sm font-medium text-white hover:text-[#B89B5E] transition-colors px-4 py-2">Services</a>
+          <a href="./contact.html" class="text-sm font-medium text-white hover:text-[#B89B5E] transition-colors px-4 py-2">Contact</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="./contact.html#contact" class="hidden md:inline-flex px-5 py-2.5 bg-[#B89B5E] text-[#111111] text-sm font-semibold hover:bg-[#c4aa70] transition-colors duration-200">Get In Touch</a>
+          <button type="button" class="nav-toggle md:hidden inline-flex items-center justify-center p-2 text-white/80 hover:text-[#B89B5E] hover:bg-white/10 focus:outline-none transition-colors" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-nav md:hidden absolute w-full max-h-0 overflow-hidden bg-[#111111]/95 backdrop-blur-xl border-t border-[#B89B5E]/20 opacity-0 transition-all duration-300 ease-in-out">
+      <div class="px-4 pt-2 pb-6 space-y-1">
+        <a href="/" class="block px-4 py-3 text-base font-medium text-white/80 hover:text-[#B89B5E] hover:bg-white/5 transition-colors">Home</a>
+        <a href="./about.html" class="block px-4 py-3 text-base font-medium text-white/80 hover:text-[#B89B5E] hover:bg-white/5 transition-colors">About</a>
+        <a href="./about.html#vision" class="block px-8 py-2 text-sm text-white/75 hover:text-[#B89B5E] transition-colors">Vision &amp; Mission</a>
+        <a href="./about.html#values" class="block px-8 py-2 text-sm text-white/75 hover:text-[#B89B5E] transition-colors">Core Values</a>
+        <a href="./leadership.html" class="block px-8 py-2 text-sm text-white/75 hover:text-[#B89B5E] transition-colors">Leadership Team</a>
+        <a href="./services.html" class="block px-4 py-3 text-base font-medium text-white/80 hover:text-[#B89B5E] hover:bg-white/5 transition-colors">Services</a>
+        <a href="./contact.html" class="block px-4 py-3 text-base font-medium text-white/80 hover:text-[#B89B5E] hover:bg-white/5 transition-colors">Contact</a>
+        <a href="./contact.html#contact" class="block px-4 py-3 bg-[#B89B5E] text-[#111111] text-base font-semibold text-center hover:bg-[#c4aa70] transition-colors duration-200">Get In Touch</a>
+      </div>
+    </div>
+  </nav>
 
   <main class="pt-28">
-    <section class="py-16 md:py-20 border-b border-[#1E3A34]">
+    <section id="contact" class="py-16 md:py-20 border-b border-[#1E3A34]">
       <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-[0.9fr_1.1fr] gap-12">
         <div>
           <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#B89B5E]">Contact Us</p>
           <h1 class="mt-4 text-4xl md:text-5xl font-semibold leading-tight text-white">Let us discuss your next project.</h1>
-          <div class="mt-8 space-y-5 text-gray-300 leading-7">
+          <div class="mt-8 space-y-5 rounded border border-[#284c43] bg-[#1E3A34]/40 p-6 text-gray-300 leading-7">
             <p><span class="block text-[#ffd700] font-semibold">Email</span><a href="mailto:info@verteenergies.com" class="hover:text-[#ffd700]">info@verteenergies.com</a></p>
             <p><span class="block text-[#ffd700] font-semibold">Phone</span>+234 806 388 5724<br>+234 803 321 4867</p>
-            <p><span class="block text-[#ffd700] font-semibold">Website</span><a href="http://www.verteenergies.com" class="hover:text-[#ffd700]">www.verteenergies.com</a></p>
+            <p><span class="block text-[#ffd700] font-semibold">Website</span><a href="https://www.verte-energies.com" class="block break-all hover:text-[#ffd700]">www.verte-energies.com</a></p>
           </div>
         </div>
         <div class="divide-y divide-[#284c43]">
@@ -54,12 +71,67 @@
 
     <section class="py-16 md:py-20">
       <div class="max-w-7xl mx-auto px-4">
-        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#B89B5E]">Map</p>
-        <div class="mt-6 h-[360px] w-full border border-[#284c43] bg-[#1E3A34] flex items-center justify-center text-gray-300">
-          Map Placeholder
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#B89B5E]">Office Locations</p>
+        <div class="mt-6 grid overflow-hidden rounded border border-[#284c43] bg-[#1E3A34] lg:grid-cols-[1fr_360px]">
+          <iframe
+            title="Map showing Verte Energies head office in Guzape, Abuja"
+            src="https://www.google.com/maps?q=Qualitrend%20Residence%201003%2C%20Bala%20Muhammed%20Way%2C%20Guzape%2C%20Abuja&output=embed"
+            class="h-[360px] w-full border-0"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+          <div class="border-t border-[#284c43] p-6 lg:border-l lg:border-t-0">
+            <h2 class="text-xl font-semibold text-[#ffd700]">Find Verte Energies</h2>
+            <p class="mt-3 text-sm leading-6 text-gray-300">Use the map for our Abuja head office or open directions to any of our office locations.</p>
+            <div class="mt-6 space-y-3">
+              <a href="https://www.google.com/maps/search/?api=1&query=Qualitrend%20Residence%201003%2C%20Bala%20Muhammed%20Way%2C%20Guzape%2C%20Abuja" target="_blank" rel="noopener" class="block rounded border border-[#B89B5E] px-4 py-3 text-sm font-semibold text-[#ffd700] hover:bg-[#B89B5E] hover:text-[#111111] transition">Head Office - Abuja</a>
+              <a href="https://www.google.com/maps/search/?api=1&query=17%20Amodu%20Tijani%20Close%2C%20Victoria%20Island%2C%20Lagos" target="_blank" rel="noopener" class="block rounded border border-[#284c43] px-4 py-3 text-sm font-semibold text-gray-100 hover:border-[#B89B5E] hover:text-[#ffd700] transition">Lagos Office</a>
+              <a href="https://www.google.com/maps/search/?api=1&query=Plot%20C%2014%20%26%2015%20Old%20Airport%20Road%2C%20Emene%2C%20Enugu%20State" target="_blank" rel="noopener" class="block rounded border border-[#284c43] px-4 py-3 text-sm font-semibold text-gray-100 hover:border-[#B89B5E] hover:text-[#ffd700] transition">Enugu Office</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   </main>
+  <footer class="site-footer bg-[#111111] border-t border-[#B89B5E]/25 text-white">
+    <div class="max-w-7xl mx-auto px-4 py-12 grid gap-8 md:grid-cols-[1.2fr_0.8fr_0.8fr]">
+      <div>
+        <a href="/" class="inline-flex items-center hover:opacity-80 transition-opacity"><img src="./big%20logo.svg" alt="Verte Energies" class="h-12 w-auto max-w-[132px]" style="filter: brightness(0) invert(1);" /></a>
+        <p class="mt-5 max-w-md text-sm leading-6 text-white/65">Oil, gas, engineering, procurement, inspection, and infrastructure solutions delivered with safety, quality, and accountability.</p>
+      </div>
+      <div>
+        <h2 class="text-sm font-semibold uppercase tracking-[0.18em] text-[#B89B5E]">Pages</h2>
+        <div class="mt-4 grid gap-2 text-sm text-white/70">
+          <a href="/" class="hover:text-[#B89B5E] transition-colors">Home</a>
+          <a href="./about.html" class="hover:text-[#B89B5E] transition-colors">About</a>
+          <a href="./leadership.html" class="hover:text-[#B89B5E] transition-colors">Leadership Team</a>
+          <a href="./services.html" class="hover:text-[#B89B5E] transition-colors">Services</a>
+          <a href="./contact.html" class="hover:text-[#B89B5E] transition-colors">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h2 class="text-sm font-semibold uppercase tracking-[0.18em] text-[#B89B5E]">Contact</h2>
+        <div class="mt-4 space-y-2 text-sm leading-6 text-white/70">
+          <a href="mailto:info@verteenergies.com" class="block hover:text-[#B89B5E] transition-colors">info@verteenergies.com</a>
+          <p>+234 806 388 5724<br>+234 803 321 4867</p>
+          <a href="./contact.html#contact" class="inline-flex mt-2 font-semibold text-[#B89B5E] hover:text-white transition-colors">Get In Touch</a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-[#B89B5E]/20 px-4 py-5 text-center text-xs text-white/50">© 2026 Verte Energies Limited. RC 8114494. Developed by Pelinks.</div>
+  </footer>
+  <script>
+    document.querySelectorAll('.nav-toggle').forEach((button) => {
+      const menu = button.closest('nav').querySelector('.mobile-nav');
+      button.addEventListener('click', () => {
+        const isOpen = menu.classList.toggle('max-h-screen');
+        menu.classList.toggle('max-h-0', !isOpen);
+        menu.classList.toggle('opacity-100', isOpen);
+        menu.classList.toggle('opacity-0', !isOpen);
+        button.setAttribute('aria-expanded', String(isOpen));
+      });
+    });
+  </script>
 </body>
 </html>
