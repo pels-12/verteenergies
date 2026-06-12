@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, Download } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { NAV_ITEMS } from '../constants';
 
 const Header: React.FC = () => {
@@ -101,14 +101,6 @@ const Header: React.FC = () => {
           {/* Right side - CTA + Mobile menu */}
           <div className="flex items-center gap-3">
             <a
-              href="/Verte-Energies-Company-Profile.pdf"
-              download
-              className="hidden lg:inline-flex px-4 py-2.5 border border-verte-gold/60 text-verte-white text-sm font-semibold hover:border-verte-gold hover:text-verte-gold transition-colors duration-200 items-center gap-2"
-            >
-              <Download className="h-4 w-4" />
-              Profile
-            </a>
-            <a
               href="#contact"
               onClick={(e) => handleNavClick(e, '#contact')}
               className="hidden md:inline-flex px-5 py-2.5 bg-verte-gold text-verte-black text-sm font-semibold hover:bg-[#c4aa70] transition-colors duration-200"
@@ -169,14 +161,6 @@ const Header: React.FC = () => {
               </a>
             );
           })}
-          <a
-            href="/Verte-Energies-Company-Profile.pdf"
-            download
-            className="flex items-center justify-center gap-2 px-4 py-3 mt-4 border border-verte-gold/40 text-verte-white text-base font-semibold text-center hover:text-verte-gold hover:border-verte-gold transition-colors duration-200"
-          >
-            <Download className="h-4 w-4" />
-            Download Profile
-          </a>
           <a
             href="#contact"
             onClick={(e) => handleNavClick(e, '#contact')}
