@@ -32,7 +32,7 @@ export const TEAM_MEMBERS = [
     linkedIn: '#',
   },
   {
-    name: 'Olusayo Ademola Ajayi',
+    name: 'Olusayo Ajayi',
     role: 'Non-Executive Director',
     bio: 'A chartered engineer and project management expert with a track record in major EPC projects and asset management.',
     image: 'https://via.placeholder.com/400x500?text=Olusayo',
