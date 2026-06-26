@@ -39,13 +39,6 @@ export const TEAM_MEMBERS = [
     linkedIn: 'https://www.linkedin.com/in/olusayo-ajayi',
   },
   {
-    name: 'Felix Radizi',
-    role: 'Non-Executive Director',
-    bio: 'Expert in operations management, fabrication, and technical support for energy projects.',
-    image: 'https://via.placeholder.com/400x500?text=Felix',
-    linkedIn: 'https://www.linkedin.com/in/felixradizi',
-  },
-  {
     name: 'Adebola Evelyn Owede',
     role: 'Non-Executive Director',
     bio: 'Finance professional with expertise in financial management and strategic planning.',
