@@ -17,6 +17,23 @@
       -webkit-backdrop-filter: blur(14px);
     }
 
+    .profile-card { background: #18201e; border: 1px solid rgba(184, 155, 94, 0.24); }
+    .profile-photo { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: top center; }
+    .profile-summary {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+      min-height: 4.5rem;
+    }
+    .profile-more summary { list-style: none; }
+    .profile-more summary::-webkit-details-marker { display: none; }
+    .profile-more .less-label { display: none; }
+    .profile-more[open] .more-label { display: none; }
+    .profile-more[open] .less-label { display: inline; }
+    .profile-more[open] .less-label { font-size: 0; }
+    .profile-more[open] .less-label::after { content: 'Show Less'; font-size: 0.875rem; }
+
   </style>
 </head>
 <body>
@@ -79,40 +96,114 @@
         <h1 class="mt-5 font-serif text-5xl md:text-7xl font-bold text-white">Leadership Team</h1>
         <p class="mt-6 max-w-3xl text-lg text-gray-300 leading-relaxed">Our leadership brings together energy, engineering, operations, finance, governance, and project delivery experience.</p>
 
-        <div class="mt-14 divide-y divide-[#284c43]">
-          <div class="grid md:grid-cols-[1fr] gap-8 py-8">
-            <div>
-              <h2 class="text-2xl font-bold text-[#ffd700]">Anthony Nwachukwu Nwokoro</h2>
-              <p class="mt-1 text-[#B89B5E] font-semibold">CHAIRMAN / CHIEF EXECUTIVE OFFICER (CEO)</p>
-              <p class="mt-4 text-gray-200 leading-relaxed">A seasoned energy executive with extensive experience in oil and gas, engineering, and infrastructure development.</p>
-              <p class="mt-3"><a href="#" class="text-[#B89B5E] hover:text-[#ffd700] transition-colors inline-flex items-center gap-2"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.852 3.369-1.852 3.602 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>LinkedIn</a></p>
-            </div>
-          </div>
-          <div class="grid md:grid-cols-[1fr] gap-8 py-8">
-            <div>
-              <h2 class="text-2xl font-bold text-[#ffd700]">Olusayo Ajayi</h2>
-              <p class="mt-1 text-[#B89B5E] font-semibold">NON-EXECUTIVE DIRECTOR</p>
-              <p class="mt-4 text-gray-200 leading-relaxed">A chartered engineer and project management expert with a track record in major EPC projects and asset management.</p>
-              <p class="mt-3"><a href="https://www.linkedin.com/in/olusayo-ajayi" class="text-[#B89B5E] hover:text-[#ffd700] transition-colors inline-flex items-center gap-2"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.852 3.369-1.852 3.602 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>LinkedIn</a></p>
-            </div>
-          </div>
-          <div class="grid md:grid-cols-[1fr] gap-8 py-8">
-            <div>
-              <h2 class="text-2xl font-bold text-[#ffd700]">Adebola Evelyn Owede</h2>
-              <p class="mt-1 text-[#B89B5E] font-semibold">NON-EXECUTIVE DIRECTOR</p>
-              <p class="mt-4 text-gray-200 leading-relaxed">Finance professional with expertise in financial management and strategic planning.</p>
-              <p class="mt-3"><a href="http://www.linkedin.com/in/adebolaowede" class="text-[#B89B5E] hover:text-[#ffd700] transition-colors inline-flex items-center gap-2"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.852 3.369-1.852 3.602 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>LinkedIn</a></p>
-            </div>
-          </div>
-          <div class="grid md:grid-cols-[1fr] gap-8 py-8">
-            <div>
-              <h2 class="text-2xl font-bold text-[#ffd700]">Ebele Ndukwe Radizi</h2>
-              <p class="mt-1 text-[#B89B5E] font-semibold">COMPANY SECRETARY/CHIEF LEGAL OFFICER</p>
-              <p class="mt-4 text-gray-200 leading-relaxed">Specialist in corporate governance, compliance, and stakeholder engagement.</p>
-              <p class="mt-3"><a href="#" class="text-[#B89B5E] hover:text-[#ffd700] transition-colors inline-flex items-center gap-2"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.852 3.369-1.852 3.602 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>LinkedIn</a></p>
-            </div>
-          </div>
+        <h2 class="mt-14 text-3xl md:text-4xl font-bold text-white">Board of Directors</h2>
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 items-start">
+          <article class="profile-card overflow-hidden h-full flex flex-col">
+            <img src="./images/team/Anthony%20Nwachukwu%20Nwokoro.png" alt="Anthony Nwachukwu Nwokoro" class="profile-photo" loading="eager" />
+            <div class="p-6 flex flex-1 flex-col"><h3 class="text-xl font-bold text-[#ffd700]">Anthony Nwachukwu Nwokoro</h3><p class="mt-2 min-h-[3rem] text-xs leading-5 tracking-[0.12em] text-[#B89B5E] font-semibold">CHAIRMAN / CHIEF EXECUTIVE OFFICER (CEO)</p><p class="profile-summary mt-4 text-sm text-gray-200 leading-6">A seasoned energy executive providing strategic direction across oil and gas, engineering, infrastructure development, and project delivery.</p><details class="profile-more mt-3 text-sm text-gray-300 leading-6"><summary class="cursor-pointer font-semibold text-[#B89B5E] hover:text-[#ffd700]"><span class="more-label">More</span><span class="less-label">Less</span></summary><p class="mt-3">He leads Verte Energies with a focus on responsible growth, operational discipline, strong client relationships, and the delivery of integrated energy and infrastructure solutions.</p></details><a href="#" aria-label="Anthony Nwachukwu Nwokoro on LinkedIn" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#B89B5E] hover:text-[#ffd700]"><span class="text-base font-bold">in</span> LinkedIn</a></div>
+          </article>
+          <article class="profile-card overflow-hidden h-full flex flex-col">
+            <img src="./images/team/olusayonon%20executive%20director.png" alt="Olusayo Ajayi" class="profile-photo" loading="lazy" />
+            <div class="p-6 flex flex-1 flex-col"><h3 class="text-xl font-bold text-[#ffd700]">Olusayo Ajayi</h3><p class="mt-2 min-h-[3rem] text-xs leading-5 tracking-[0.12em] text-[#B89B5E] font-semibold">NON-EXECUTIVE DIRECTOR</p><p class="profile-summary mt-4 text-sm text-gray-200 leading-6">A chartered engineer and project management expert with a strong track record in major EPC projects and asset management.</p><details class="profile-more mt-3 text-sm text-gray-300 leading-6"><summary class="cursor-pointer font-semibold text-[#B89B5E] hover:text-[#ffd700]"><span class="more-label">More</span><span class="less-label">Less</span></summary><p class="mt-3">He contributes engineering oversight, project assurance, and practical delivery experience to the Board, supporting sound decisions throughout the project lifecycle.</p></details><a href="https://www.linkedin.com/in/olusayo-ajayi" target="_blank" rel="noopener noreferrer" aria-label="Olusayo Ajayi on LinkedIn" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#B89B5E] hover:text-[#ffd700]"><span class="text-base font-bold">in</span> LinkedIn</a></div>
+          </article>
+          <article class="profile-card overflow-hidden h-full flex flex-col">
+            <img src="./images/team/adebola%20chief%20finance.png" alt="Adebola Evelyn Owede" class="profile-photo" loading="lazy" />
+            <div class="p-6 flex flex-1 flex-col"><h3 class="text-xl font-bold text-[#ffd700]">Adebola Evelyn Owede</h3><p class="mt-2 min-h-[3rem] text-xs leading-5 tracking-[0.12em] text-[#B89B5E] font-semibold">NON-EXECUTIVE DIRECTOR</p><p class="profile-summary mt-4 text-sm text-gray-200 leading-6">A finance professional contributing expertise in financial management, strategic planning, governance, and sustainable business growth.</p><details class="profile-more mt-3 text-sm text-gray-300 leading-6"><summary class="cursor-pointer font-semibold text-[#B89B5E] hover:text-[#ffd700]"><span class="more-label">More</span><span class="less-label">Less</span></summary><p class="mt-3">She supports the Board with financial insight, performance oversight, planning discipline, and an informed approach to long-term organisational resilience.</p></details><a href="http://www.linkedin.com/in/adebolaowede" target="_blank" rel="noopener noreferrer" aria-label="Adebola Evelyn Owede on LinkedIn" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#B89B5E] hover:text-[#ffd700]"><span class="text-base font-bold">in</span> LinkedIn</a></div>
+          </article>
+          <article class="profile-card overflow-hidden h-full flex flex-col">
+            <img src="./images/team/Ebele%20company%20sec.png" alt="Ebele Ndukwe Radizi" class="profile-photo" loading="lazy" />
+            <div class="p-6 flex flex-1 flex-col"><h3 class="text-xl font-bold text-[#ffd700]">Ebele Ndukwe Radizi</h3><p class="mt-2 min-h-[3rem] text-xs leading-5 tracking-[0.12em] text-[#B89B5E] font-semibold">COMPANY SECRETARY / CHIEF LEGAL OFFICER</p><p class="profile-summary mt-4 text-sm text-gray-200 leading-6">A legal and governance specialist supporting corporate compliance, Board effectiveness, risk awareness, and stakeholder engagement.</p><details class="profile-more mt-3 text-sm text-gray-300 leading-6"><summary class="cursor-pointer font-semibold text-[#B89B5E] hover:text-[#ffd700]"><span class="more-label">More</span><span class="less-label">Less</span></summary><p class="mt-3">She provides guidance on corporate governance, legal compliance, organisational accountability, and the clear documentation of key business decisions.</p></details><a href="#" aria-label="Ebele Ndukwe Radizi on LinkedIn" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#B89B5E] hover:text-[#ffd700]"><span class="text-base font-bold">in</span> LinkedIn</a></div>
+          </article>
         </div>
+
+        <section class="mt-24 pt-16 border-t border-[#B89B5E]/25" aria-labelledby="management-team-title">
+          <p class="text-sm font-bold uppercase tracking-[0.22em] text-[#B89B5E]">The People Behind Delivery</p>
+          <h2 id="management-team-title" class="mt-4 text-4xl md:text-5xl font-bold text-white">Management Team</h2>
+          <p class="mt-5 max-w-3xl text-gray-300 leading-7">Our management team translates strategy into disciplined execution across projects, finance, governance, and day-to-day operations.</p>
+          <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 items-start">
+            <article class="profile-card overflow-hidden h-full flex flex-col">
+              <img src="./images/team/COLLINS.jpg" alt="Collins Okaru" class="profile-photo" loading="lazy" />
+              <div class="p-6 flex flex-1 flex-col">
+                <h3 class="text-xl font-bold text-[#ffd700]">Collins Okaru</h3>
+                <p class="mt-2 min-h-[3rem] text-xs leading-5 tracking-[0.12em] text-[#B89B5E] font-semibold">CHARTERED ENGINEER &amp; PROJECT MANAGEMENT PROFESSIONAL</p>
+                <p class="profile-summary mt-4 text-sm text-gray-200 leading-6">A Chartered Engineer, PMP, and energy leader with over 20 years of experience delivering offshore, subsea, infrastructure, and industrial automation projects worldwide.</p>
+                <details class="profile-more mt-3 text-sm text-gray-300 leading-6">
+                  <summary class="cursor-pointer font-semibold text-[#B89B5E] hover:text-[#ffd700]"><span class="more-label">More</span><span class="less-label">Less</span></summary>
+                  <div class="mt-4 space-y-5">
+                    <div class="space-y-3">
+                      <p>Collins Okaru is an experienced Chartered Engineer with the Engineering Council of the United Kingdom, a Project Management Professional, and an energy industry leader with over 20 years of experience delivering complex offshore, subsea, energy, infrastructure, and industrial automation projects across North America, Europe, Africa, and the Gulf of Mexico.</p>
+                      <p>His career includes leadership roles with major operators and engineering organisations including Shell, TotalEnergies, Xodus Group, and NPSG Global. He has extensive involvement in deepwater subsea developments covering Subsea Production Systems, SURF, controls and distribution systems, fabrication, commissioning, and project execution.</p>
+                      <p>He has also led large-scale warehouse automation and e-fulfilment infrastructure programmes supporting Amazon fulfilment operations across North America and Europe, combining engineering excellence with strategic project delivery and operational optimisation.</p>
+                    </div>
+                    <div><h4 class="font-bold uppercase tracking-wider text-[#B89B5E]">Education</h4><ul class="mt-2 list-disc space-y-1 pl-5"><li>Cranfield University — MSc, Offshore and Ocean Technology with Subsea Engineering</li><li>Cranfield University — Executive Certificate, Energy Systems: Executive Perspective (2016)</li><li>Federal University of Technology Owerri — MSc, Project Management Technology</li><li>Federal University of Technology Owerri — B.Eng., Electrical and Electronic Engineering</li></ul></div>
+                    <div><h4 class="font-bold uppercase tracking-wider text-[#B89B5E]">Professional Certifications</h4><ul class="mt-2 list-disc space-y-1 pl-5"><li>Chartered Engineer (CEng) — Engineering Council</li><li>Chartered Petroleum Engineer — Energy Institute</li><li>Project Management Professional (PMP) — Project Management Institute</li><li>Certified Scrum Master (CSM) — Scrum Alliance</li><li>Certified Scrum Product Owner (CSPO) — Scrum Alliance</li><li>Registered Engineer — Council for the Regulation of Engineering in Nigeria</li></ul></div>
+                    <div><h4 class="font-bold uppercase tracking-wider text-[#B89B5E]">Areas of Expertise</h4><ul class="mt-2 grid list-disc gap-x-6 gap-y-1 pl-5 sm:grid-cols-2"><li>Subsea Production Systems</li><li>Deepwater Field Development</li><li>SURF Engineering</li><li>Offshore Construction &amp; Commissioning</li><li>Project &amp; Portfolio Management</li><li>Energy Transition &amp; Renewable Energy Economics</li><li>Warehouse Automation &amp; E-Fulfilment Infrastructure</li><li>Stakeholder &amp; Vendor Management</li><li>Operational Excellence</li><li>Risk Management &amp; Strategic Planning</li></ul></div>
+                  </div>
+                </details>
+                <a href="https://www.linkedin.com/in/collinsokaru" target="_blank" rel="noopener noreferrer" aria-label="Collins Okaru on LinkedIn" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#B89B5E] hover:text-[#ffd700]"><span class="text-base font-bold">in</span> LinkedIn</a>
+              </div>
+            </article>
+            <article class="profile-card overflow-hidden h-full flex flex-col">
+              <img src="./images/team/terngu-utim.png" alt="Terngu Utim" class="profile-photo" loading="lazy" />
+              <div class="p-6 flex flex-1 flex-col">
+                <h3 class="text-xl font-bold text-[#ffd700]">Terngu Utim</h3>
+                <p class="mt-2 min-h-[3rem] text-xs leading-5 tracking-[0.12em] text-[#B89B5E] font-semibold">DIRECTOR, COMMERCIAL &amp; NEW DEVELOPMENTS</p>
+                <p class="profile-summary mt-4 text-sm text-gray-200 leading-6">A Houston-based development leader with extensive experience in commercial growth, petroleum geoscience, subsurface leadership, and new energy opportunities.</p>
+                <details class="profile-more mt-3 text-sm text-gray-300 leading-6">
+                  <summary class="cursor-pointer font-semibold text-[#B89B5E] hover:text-[#ffd700]"><span class="more-label">More</span><span class="less-label">Less</span></summary>
+                  <div class="mt-4 space-y-5">
+                    <div class="space-y-3">
+                      <p>Terngu Utim is a development leader based in Houston, Texas. As Director of Commercial and New Developments at Verte Energies Ltd, he leads commercial growth, new-opportunity initiatives, and strategic partnerships.</p>
+                      <p>His career spans more than two decades across commercial development, geological advisory, subsurface leadership, geomodelling, sedimentology, and petroleum geoscience.</p>
+                    </div>
+                    <div>
+                      <h4 class="font-bold uppercase tracking-wider text-[#B89B5E]">Professional Experience</h4>
+                      <div class="mt-3 space-y-4 border-l border-[#B89B5E]/35 pl-4">
+                        <div><p class="font-semibold text-white">Verte Energies Ltd</p><p class="text-[#B89B5E]">Director, Commercial and New Developments</p><p class="text-xs text-gray-400">August 2026–Present · Houston, Texas</p><p class="mt-1">Leads commercial growth, new opportunity initiatives, and strategic partnerships.</p></div>
+                        <div><p class="font-semibold text-white">XPSG, LLC</p><p class="text-[#B89B5E]">Manager &amp; Subsurface Lead</p><p class="text-xs text-gray-400">July 2025–August 2026 · Houston, Texas</p></div>
+                        <div><p class="font-semibold text-white">Murphy Oil Corporation</p><p class="text-[#B89B5E]">Geological Advisor</p><p class="text-xs text-gray-400">July 2019–April 2025 · Greater Houston</p></div>
+                        <div><p class="font-semibold text-white">XPSG, LLC</p><p class="text-[#B89B5E]">Lead Geologist &amp; Geomodeler</p><p class="text-xs text-gray-400">May 2015–July 2019 · Greater Houston</p></div>
+                        <div><p class="font-semibold text-white">Nexen Inc.</p><p class="text-[#B89B5E]">Staff Geologist</p><p class="text-xs text-gray-400">April 2011–April 2015 · Houston, Texas</p></div>
+                        <div><p class="font-semibold text-white">Roxar</p><p class="text-[#B89B5E]">Senior Consultant Geologist &amp; BDM</p><p class="text-xs text-gray-400">2007–2010</p></div>
+                        <div><p class="font-semibold text-white">Shell</p><p class="text-[#B89B5E]">Geologist</p><p class="text-xs text-gray-400">September 2001–October 2007</p></div>
+                        <div><p class="font-semibold text-white">Biogeochem Associates</p><p class="text-[#B89B5E]">Project Manager &amp; Sedimentologist</p><p class="text-xs text-gray-400">January 1999–June 2000</p></div>
+                        <div><p class="font-semibold text-white">Core Laboratories</p><p class="text-[#B89B5E]">Core Analyst</p><p class="text-xs text-gray-400">December 1997–December 1998</p></div>
+                      </div>
+                    </div>
+                    <div><h4 class="font-bold uppercase tracking-wider text-[#B89B5E]">Education</h4><ul class="mt-2 list-disc space-y-1 pl-5"><li>Royal Holloway, University of London — MSc, Petroleum Geoscience</li><li>The Robert Gordon University / Shell SITP</li><li>University of Jos — BSc, Geology &amp; Mining</li></ul></div>
+                  </div>
+                </details>
+                <a href="https://www.linkedin.com/in/ternguutim" target="_blank" rel="noopener noreferrer" aria-label="Terngu Utim on LinkedIn" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#B89B5E] hover:text-[#ffd700]"><span class="text-base font-bold">in</span> LinkedIn</a>
+              </div>
+            </article>
+            <article class="profile-card overflow-hidden h-full flex flex-col">
+              <img src="https://ui-avatars.com/api/?name=Samson+Onoh&amp;size=800&amp;background=234038&amp;color=F5F5F5&amp;font-size=0.28&amp;bold=true" alt="Samson Onoh profile placeholder" class="profile-photo" loading="lazy" />
+              <div class="p-6 flex flex-1 flex-col">
+                <h3 class="text-xl font-bold text-[#ffd700]">Samson Onoh, COREN, PMP</h3>
+                <p class="mt-2 min-h-[3rem] text-xs leading-5 tracking-[0.12em] text-[#B89B5E] font-semibold">GM, PROJECTS &amp; OPERATIONS PORTFOLIO</p>
+                <p class="profile-summary mt-4 text-sm text-gray-200 leading-6">A COREN-registered engineer and PMP-certified portfolio leader managing projects, operations, delivery priorities, and performance for Verte Energies.</p>
+                <details class="profile-more mt-3 text-sm text-gray-300 leading-6">
+                  <summary class="cursor-pointer font-semibold text-[#B89B5E] hover:text-[#ffd700]"><span class="more-label">More</span><span class="less-label">Less</span></summary>
+                  <div class="mt-4 space-y-5">
+                    <div class="space-y-3">
+                      <p>Samson Onoh is a COREN-registered engineer and Project Management Professional based in Lagos, Nigeria. He serves as General Manager, Projects &amp; Operations Portfolio at Verte Energies Ltd.</p>
+                      <p>He brings project-portfolio leadership experience from Shell Nigeria Exploration and Production Company Limited, supporting disciplined planning, operational coordination, delivery oversight, and performance across complex energy-sector projects.</p>
+                    </div>
+                    <div>
+                      <h4 class="font-bold uppercase tracking-wider text-[#B89B5E]">Professional Experience</h4>
+                      <div class="mt-3 space-y-4 border-l border-[#B89B5E]/35 pl-4">
+                        <div><p class="font-semibold text-white">Verte Energies Ltd</p><p class="text-[#B89B5E]">GM, Projects &amp; Operations Portfolio</p><p class="text-xs text-gray-400">August 2026–Present · Lagos, Nigeria</p></div>
+                        <div><p class="font-semibold text-white">Shell Nigeria Exploration and Production Company Limited</p><p class="text-[#B89B5E]">Project Portfolio Manager</p></div>
+                      </div>
+                    </div>
+                    <div><h4 class="font-bold uppercase tracking-wider text-[#B89B5E]">Professional Credentials</h4><ul class="mt-2 list-disc space-y-1 pl-5"><li>COREN-Registered Engineer</li><li>Project Management Professional (PMP)</li></ul></div>
+                  </div>
+                </details>
+                <a href="https://www.linkedin.com/in/samson-onoh-coren-pmp-8a0736366/" target="_blank" rel="noopener noreferrer" aria-label="Samson Onoh on LinkedIn" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#B89B5E] hover:text-[#ffd700]"><span class="text-base font-bold">in</span> LinkedIn</a>
+              </div>
+            </article>
+          </div>
+        </section>
       </div>
     </section>
   </main>
@@ -144,6 +235,18 @@
     <div class="border-t border-[#B89B5E]/20 px-4 py-5 text-center text-xs text-white/50">© 2026 Verte Energies Limited. RC 8114494. Developed by Pelinks.</div>
   </footer>
   <script>
+    const boardLinkedInProfiles = {
+      'Anthony Nwachukwu Nwokoro on LinkedIn': 'https://www.linkedin.com/in/nwokoro-nwachukwu-abbb314a',
+      'Ebele Ndukwe Radizi on LinkedIn': 'https://www.linkedin.com/in/ebele-ndukwe-radizi-96935736/'
+    };
+    Object.entries(boardLinkedInProfiles).forEach(([label, url]) => {
+      const link = document.querySelector(`[aria-label="${label}"]`);
+      if (!link) return;
+      link.href = url;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+    });
+
     const nav = document.querySelector('.site-nav');
     const syncNavScroll = () => {
       const isScrolled = window.scrollY > 10;
