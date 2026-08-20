@@ -24,6 +24,15 @@ const Team: React.FC = () => {
             const memberAnimation = useScrollAnimation('fade-in-up', { once: true, margin: '0px 0px -50px 0px' });
             return (
               <article key={member.name} ref={memberAnimation.ref} className={`bg-verte-white ${memberAnimation.className}`}>
+                <div className="aspect-[4/5] overflow-hidden bg-verte-green">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
                 <div className="p-5">
                   <p className="text-xs font-semibold text-verte-gold uppercase tracking-widest mb-2">{member.role}</p>
                   <h3 className="text-lg font-bold text-verte-black mb-3 leading-snug">{member.name}</h3>
