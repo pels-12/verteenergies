@@ -13,23 +13,28 @@ const About: React.FC = () => {
           <div ref={titleAnimation.ref} className={titleAnimation.className}>
             <p className="text-xs font-semibold tracking-[0.22em] uppercase text-verte-gold mb-4">About Verte</p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-verte-black mb-7 leading-tight">
-              Nigerian energy and engineering delivery, built on accountability.
+              Corporate Overview
             </h2>
 
             <div className="space-y-5 text-slate-700 leading-8">
               <p>
                 Verte Energies Limited is a fully indigenous Nigerian energy and engineering company incorporated
-                under the Companies and Allied Matters Act. The company serves oil, gas, engineering, procurement,
-                marine inspection, and infrastructure clients with a practical focus on safety, quality, and delivery.
+                under the Companies and Allied Matters Act (CAMA 2020). Our incorporation (RC 8114494) establishes it
+                as a legitimate player within Nigeria’s oil, gas, and construction sectors, guided by a strong
+                governance framework and compliance with the Nigerian Oil and Gas Industry Content Development
+                (NOGICD) Act.
               </p>
               <p>
-                Headquartered in Abuja with offices in Lagos and Enugu, Verte was established to connect global
-                engineering standards with local execution realities. Our work supports upstream, downstream,
-                construction, technical support, and energy infrastructure programmes.
+                Headquartered in Abuja, Verte Energies Limited is a diversified leading indigenous company with core
+                interests in oil &amp; gas upstream, midstream and downstream including civil construction sector and
+                innovative technology solutions. Verte Energies has the sector expertise and is committed to being
+                actively engaged in these sectors of the economy to deliver sustainable integrated energy solutions
+                and infrastructure projects to support national growth and align with the Federal Government’s
+                industrialization agenda.
               </p>
               <p className="border-l-2 border-verte-gold pl-5 text-verte-black">
-                Registration with industry platforms and compliance frameworks underpins how we approach projects:
-                clear governance, capable teams, and disciplined site execution.
+                Our registration with the Nigerian Oil and Gas Industry Service Providers (OGISP) platform affirms
+                our competence to execute major projects within both upstream and downstream environments.
               </p>
             </div>
 

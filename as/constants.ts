@@ -27,30 +27,54 @@ export const TEAM_MEMBERS = [
   {
     name: 'Anthony Nwachukwu Nwokoro',
     role: 'Chairman / Chief Executive Officer (CEO)',
-    bio: 'A seasoned energy executive with extensive experience in oil and gas, engineering, and infrastructure development.',
-    image: '/images/team/anthony-nwachukwu-nwokoro-dark-green.png',
-    linkedIn: '#',
+    bio: 'A distinguished construction, infrastructure, and energy executive with over 25 years of experience in strategic leadership, operational excellence, and commercial delivery.',
+    image: '/images/team/anthony-nwachukwu-nwokoro-brand-green.png',
+    linkedIn: 'https://www.linkedin.com/in/nwokoro-nwachukwu-abbb314a',
   },
   {
     name: 'Olusayo Ajayi',
     role: 'Non-Executive Director',
-    bio: 'A chartered engineer and project management expert with a track record in major EPC projects and asset management.',
-    image: '/images/team/olusayo-ajayi-dark-green.png',
+    bio: 'A multiple award-winning project and engineering management executive with over 25 years of international oil and gas experience.',
+    image: '/images/team/olusayo-ajayi-brand-green.png',
     linkedIn: 'https://www.linkedin.com/in/olusayo-ajayi',
   },
   {
     name: 'Adebola Evelyn Owede',
     role: 'Non-Executive Director',
-    bio: 'Finance professional with expertise in financial management and strategic planning.',
-    image: '/images/team/adebola-evelyn-owede-dark-green.png',
-    linkedIn: 'http://www.linkedin.com/in/adebolaowede',
+    bio: 'A CFA Charterholder and senior finance professional with over 20 years of experience across treasury, capital markets, and strategic finance.',
+    image: '/images/team/adebola-evelyn-owede-brand-green.png',
+    linkedIn: 'https://www.linkedin.com/in/adebolaowede',
   },
   {
     name: 'Ebele Ndukwe Radizi',
     role: 'Company Secretary / Chief Legal Officer',
-    bio: 'Specialist in corporate governance, compliance, and stakeholder engagement.',
-    image: '/images/team/ebele-ndukwe-radizi-dark-green.png',
-    linkedIn: '#',
+    bio: 'A seasoned legal and consulting professional with over 20 years of experience across legal practice, in-house advisory, and international development consulting.',
+    image: '/images/team/ebele-ndukwe-radizi-brand-green.png',
+    linkedIn: 'https://www.linkedin.com/in/ebele-ndukwe-radizi-96935736/',
+  },
+];
+
+export const MANAGEMENT_MEMBERS = [
+  {
+    name: 'Collins Okaru',
+    role: 'Chartered Engineer & Project Management Professional',
+    bio: 'A Chartered Engineer, PMP, and energy leader with over 20 years of experience delivering offshore, subsea, infrastructure, and industrial automation projects worldwide.',
+    image: '/images/team/collins-okaru-brand-green.png',
+    linkedIn: 'https://www.linkedin.com/in/collinsokaru',
+  },
+  {
+    name: 'Terngu Utim',
+    role: 'Director (Commercial and New Business Development)',
+    bio: 'A Houston-based development leader with extensive experience in commercial growth, petroleum geoscience, subsurface leadership, and new energy opportunities.',
+    image: '/images/team/terngu-utim-brand-green.png',
+    linkedIn: 'https://www.linkedin.com/in/ternguutim',
+  },
+  {
+    name: 'Samson Onoh',
+    role: 'GM, Projects & Operations Portfolio',
+    bio: 'A COREN-registered engineer and PMP-certified portfolio leader managing projects, operations, delivery priorities, and performance for Verte Energies.',
+    image: '/images/team/samson-onoh-brand-green.png',
+    linkedIn: 'https://www.linkedin.com/in/samson-onoh-coren-pmp-8a0736366/',
   },
 ];
 
