@@ -105,12 +105,12 @@ export default async function handler(req, res) {
     const toAddress = process.env.TO_EMAIL || 'info@verteenergies.com';
 
     const mailOptions = {
-      from: `"Windek Website" <${fromAddress}>`,
+      from: `"Verte Energies Website" <${fromAddress}>`,
       to: toAddress,
       subject: `New Inquiry from ${name || 'Website Visitor'}`,
       replyTo: email,
       text:
-          `You have a new contact request from the Windek Oil and Gas website.\n\n` +
+          `You have a new contact request from the Verte Energies website.\n\n` +
           `Name: ${name || 'N/A'}\n` +
           `Email: ${email}\n` +
           `Phone: ${phone || 'N/A'}\n\n` +

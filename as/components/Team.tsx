@@ -1,5 +1,5 @@
 import React from 'react';
-import { Linkedin } from 'lucide-react';
+import { ArrowRight, Linkedin } from 'lucide-react';
 import { MANAGEMENT_MEMBERS, TEAM_MEMBERS } from '../constants';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
@@ -23,16 +23,25 @@ const TeamCard: React.FC<{ member: TeamMember }> = ({ member }) => {
         <p className="text-xs font-semibold text-verte-gold uppercase tracking-widest mb-2">{member.role}</p>
         <h4 className="text-lg font-bold text-verte-black mb-3 leading-snug">{member.name}</h4>
         <p className="text-sm leading-6 text-slate-600">{member.bio}</p>
-        <a
-          href={member.linkedIn}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`${member.name} on LinkedIn`}
-          className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-verte-gold hover:text-verte-black transition-colors"
-        >
-          <Linkedin className="h-4 w-4" strokeWidth={2} aria-hidden="true" />
-          LinkedIn
-        </a>
+        <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2">
+          <a
+            href={`/leadership.html#${member.profileId}`}
+            className="inline-flex items-center gap-2 text-sm font-semibold text-verte-gold hover:text-verte-black transition-colors"
+          >
+            More
+            <ArrowRight className="h-4 w-4" strokeWidth={2} aria-hidden="true" />
+          </a>
+          <a
+            href={member.linkedIn}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${member.name} on LinkedIn`}
+            className="inline-flex items-center gap-2 text-sm font-semibold text-verte-gold hover:text-verte-black transition-colors"
+          >
+            <Linkedin className="h-4 w-4" strokeWidth={2} aria-hidden="true" />
+            LinkedIn
+          </a>
+        </div>
       </div>
     </article>
   );

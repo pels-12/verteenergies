@@ -5,6 +5,8 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Contact: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
   const titleAnimation = useScrollAnimation('fade-in-up', { once: true });
   const formAnimation = useScrollAnimation('fade-in-right', { once: true });
 
@@ -14,8 +16,41 @@ const Contact: React.FC = () => {
     return () => clearTimeout(timer);
   }, [showModal]);
 
-  const handleSubmit = () => {
-    setTimeout(() => setShowModal(true), 500);
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setSubmitError('');
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const firstName = String(formData.get('First Name') || '').trim();
+    const lastName = String(formData.get('Last Name') || '').trim();
+
+    try {
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: `${firstName} ${lastName}`.trim(),
+          email: formData.get('email'),
+          message: formData.get('message'),
+          website: formData.get('website'),
+          form_time: formData.get('form_time'),
+        }),
+      });
+      const result = await response.json();
+
+      if (!response.ok || !result.ok) {
+        throw new Error(result.error || 'Unable to send your message.');
+      }
+
+      form.reset();
+      setShowModal(true);
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : 'Unable to send your message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -103,9 +138,10 @@ const Contact: React.FC = () => {
           <div ref={formAnimation.ref} className={`bg-verte-white text-verte-black p-6 sm:p-8 lg:p-10 ${formAnimation.className}`}>
             <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
 
-            <form action="https://formsubmit.co/info@verteenergies.com" method="POST" onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_autoresponse" value="Thank you for contacting Verte Energies Limited. We have received your inquiry and will respond shortly." />
+              <input type="hidden" name="website" value="" tabIndex={-1} autoComplete="off" />
+              <input type="hidden" name="form_time" value={Date.now()} />
 
               <div className="grid sm:grid-cols-2 gap-5">
                 <label className="space-y-2">
@@ -128,8 +164,12 @@ const Contact: React.FC = () => {
                 <textarea required name="message" rows={5} className="w-full bg-white border border-black/10 p-3 text-verte-black focus:border-verte-gold focus:outline-none transition-colors resize-none" />
               </label>
 
-              <button type="submit" className="w-full bg-verte-green text-verte-white font-bold uppercase tracking-widest py-4 hover:bg-verte-black transition-colors duration-200">
-                Submit Message
+              {submitError && (
+                <p role="alert" className="text-sm font-semibold text-red-700">{submitError}</p>
+              )}
+
+              <button type="submit" disabled={isSubmitting} className="w-full bg-verte-green text-verte-white font-bold uppercase tracking-widest py-4 hover:bg-verte-black disabled:opacity-60 disabled:cursor-not-allowed transition-colors duration-200">
+                {isSubmitting ? 'Sending...' : 'Submit Message'}
               </button>
             </form>
           </div>
