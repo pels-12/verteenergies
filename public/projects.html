@@ -8,7 +8,20 @@
   <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>body { font-family: 'Inter', sans-serif; background: #111111; color: #F5F5F5; }</style>
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #111111; color: #F5F5F5; }
+    .about-dropdown::before { content: ''; position: absolute; inset: -0.5rem 0 auto; height: 0.5rem; }
+    .about-menu.is-open .about-dropdown { opacity: 1; visibility: visible; }
+    .about-menu.is-open .about-arrow { transform: rotate(180deg); }
+    @media (hover: hover) and (pointer: fine) {
+      .about-menu:hover .about-dropdown { opacity: 1; visibility: visible; }
+      .about-menu:hover .about-arrow { transform: rotate(180deg); }
+    }
+    .about-menu.force-closed .about-dropdown { opacity: 0; visibility: hidden; }
+    .about-menu.force-closed .about-arrow { transform: none; }
+    .mobile-nav { max-height: 0; overflow: hidden; opacity: 0; }
+    .mobile-nav.is-open { max-height: calc(100dvh - 6.5rem); overflow-y: auto; overscroll-behavior: contain; opacity: 1; }
+  </style>
 </head>
 <body>
   <nav class="fixed w-full z-50 bg-[#111111]/78 py-5 backdrop-blur-xl transition-all duration-300 ease-in-out">
@@ -17,9 +30,9 @@
         <a href="/" class="flex-shrink-0 flex items-center gap-3 hover:opacity-80 transition-opacity"><img src="./big%20logo.svg" alt="Verte Energies" class="h-12 w-auto max-w-[132px]" style="filter: brightness(0) invert(1);" /></a>
         <div class="hidden md:flex items-center space-x-1">
           <a href="/" class="text-sm font-medium text-white hover:text-[#B89B5E] transition-colors px-4 py-2">Home</a>
-          <div class="relative group">
-            <a href="./about.html" class="text-sm font-medium text-white hover:text-[#B89B5E] transition-colors px-4 py-2 flex items-center gap-1">About <span class="transition-transform group-hover:rotate-180">v</span></a>
-            <div class="absolute left-0 mt-2 w-56 bg-[#111111]/95 backdrop-blur-xl border border-[#B89B5E]/20 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2">
+          <div class="about-menu relative group">
+            <button type="button" class="about-toggle text-sm font-medium text-white hover:text-[#B89B5E] transition-colors px-4 py-2 flex items-center gap-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B89B5E]" aria-expanded="false" aria-haspopup="true" aria-controls="desktop-about-menu">About <span class="about-arrow transition-transform" aria-hidden="true">v</span></button>
+            <div id="desktop-about-menu" class="about-dropdown absolute left-0 mt-2 w-56 bg-[#111111]/95 backdrop-blur-xl border border-[#B89B5E]/20 shadow-xl opacity-0 invisible transition-all duration-200 py-2">
               <a href="./about.html" class="block px-4 py-2 text-sm text-white hover:text-[#B89B5E] hover:bg-white/5 transition-colors">About Us</a>
               <a href="./about.html#vision" class="block px-4 py-2 text-sm text-white hover:text-[#B89B5E] hover:bg-white/5 transition-colors">Vision &amp; Mission</a>
               <a href="./about.html#values" class="block px-4 py-2 text-sm text-white hover:text-[#B89B5E] hover:bg-white/5 transition-colors">Core Values</a>
@@ -27,16 +40,20 @@
             </div>
           </div>
           <a href="./services.html" class="text-sm font-medium text-white hover:text-[#B89B5E] transition-colors px-4 py-2">Services</a>
+          <a href="./projects.html" class="text-sm font-medium text-white hover:text-[#B89B5E] transition-colors px-4 py-2">Projects</a>
           <a href="./contact.html" class="text-sm font-medium text-white hover:text-[#B89B5E] transition-colors px-4 py-2">Contact</a>
         </div>
         <div class="flex items-center gap-3">
           <a href="./Verte%20Energies%20Company%20Profile.pdf" download class="hidden lg:inline-flex px-4 py-2.5 border border-[#B89B5E]/60 text-white text-sm font-semibold hover:border-[#B89B5E] hover:text-[#B89B5E] transition-colors duration-200 items-center gap-2">Profile</a>
           <a href="./contact.html#contact" class="hidden md:inline-flex px-5 py-2.5 bg-[#B89B5E] text-[#111111] text-sm font-semibold hover:bg-[#c4aa70] transition-colors duration-200">Get In Touch</a>
-          <button type="button" class="nav-toggle md:hidden inline-flex items-center justify-center p-2 text-white/80 hover:text-[#B89B5E] hover:bg-white/10 focus:outline-none transition-colors" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
+          <button type="button" class="nav-toggle md:hidden inline-flex h-11 w-11 items-center justify-center text-white/80 hover:text-[#B89B5E] hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B89B5E] transition-colors" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-navigation">
+            <svg class="menu-icon h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+            <svg class="close-icon hidden h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" /></svg>
+          </button>
         </div>
       </div>
     </div>
-    <div class="mobile-nav md:hidden absolute w-full max-h-0 overflow-hidden bg-[#111111]/95 backdrop-blur-xl border-t border-[#B89B5E]/20 opacity-0 transition-all duration-300 ease-in-out">
+    <div id="mobile-navigation" class="mobile-nav md:hidden absolute w-full bg-[#111111]/95 backdrop-blur-xl border-t border-[#B89B5E]/20 transition-all duration-300 ease-in-out" aria-hidden="true" inert>
       <div class="px-4 pt-2 pb-6 space-y-1">
         <a href="/" class="block px-4 py-3 text-base font-medium text-white/80 hover:text-[#B89B5E] hover:bg-white/5 transition-colors">Home</a>
         <a href="./about.html" class="block px-4 py-3 text-base font-medium text-white/80 hover:text-[#B89B5E] hover:bg-white/5 transition-colors">About</a>
@@ -44,6 +61,7 @@
         <a href="./about.html#values" class="block px-8 py-2 text-sm text-white/75 hover:text-[#B89B5E] transition-colors">Core Values</a>
         <a href="./leadership.html" class="block px-8 py-2 text-sm text-white/75 hover:text-[#B89B5E] transition-colors">Leadership Team</a>
         <a href="./services.html" class="block px-4 py-3 text-base font-medium text-white/80 hover:text-[#B89B5E] hover:bg-white/5 transition-colors">Services</a>
+        <a href="./projects.html" class="block px-4 py-3 text-base font-medium text-white/80 hover:text-[#B89B5E] hover:bg-white/5 transition-colors">Projects</a>
         <a href="./contact.html" class="block px-4 py-3 text-base font-medium text-white/80 hover:text-[#B89B5E] hover:bg-white/5 transition-colors">Contact</a>
         <a href="./Verte%20Energies%20Company%20Profile.pdf" download class="flex items-center justify-center gap-2 px-4 py-3 mt-4 border border-[#B89B5E]/40 text-white text-base font-semibold text-center hover:text-[#B89B5E] hover:border-[#B89B5E] transition-colors duration-200">Download Profile</a>
         <a href="./contact.html#contact" class="block px-4 py-3 bg-[#B89B5E] text-[#111111] text-base font-semibold text-center hover:bg-[#c4aa70] transition-colors duration-200">Get In Touch</a>
@@ -73,9 +91,9 @@
           </div>
         </article>
         <div class="grid md:grid-cols-3 gap-8">
-          <div class="border-t border-[#B89B5E] pt-5"><h2 class="text-xl font-semibold text-[#ffd700]">Facility Upgrades</h2><p class="mt-3 text-gray-300 leading-7">Engineering, mechanical, and procurement support for operational assets.</p></div>
-          <div class="border-t border-[#B89B5E] pt-5"><h2 class="text-xl font-semibold text-[#ffd700]">Pipeline & Field Works</h2><p class="mt-3 text-gray-300 leading-7">Construction, maintenance, inspection, and technical field support.</p></div>
-          <div class="border-t border-[#B89B5E] pt-5"><h2 class="text-xl font-semibold text-[#ffd700]">Technical Programs</h2><p class="mt-3 text-gray-300 leading-7">Digital monitoring, compliance support, QA/QC, and project control systems.</p></div>
+          <div class="border-t border-[#B89B5E] pt-5"><h2 class="text-xl font-semibold text-[#B89B5E]">Facility Upgrades</h2><p class="mt-3 text-gray-300 leading-7">Engineering, mechanical, and procurement support for operational assets.</p></div>
+          <div class="border-t border-[#B89B5E] pt-5"><h2 class="text-xl font-semibold text-[#B89B5E]">Pipeline & Field Works</h2><p class="mt-3 text-gray-300 leading-7">Construction, maintenance, inspection, and technical field support.</p></div>
+          <div class="border-t border-[#B89B5E] pt-5"><h2 class="text-xl font-semibold text-[#B89B5E]">Technical Programs</h2><p class="mt-3 text-gray-300 leading-7">Digital monitoring, compliance support, QA/QC, and project control systems.</p></div>
         </div>
       </div>
     </section>
@@ -93,6 +111,7 @@
           <a href="./about.html" class="hover:text-[#B89B5E] transition-colors">About</a>
           <a href="./leadership.html" class="hover:text-[#B89B5E] transition-colors">Leadership Team</a>
           <a href="./services.html" class="hover:text-[#B89B5E] transition-colors">Services</a>
+          <a href="./projects.html" class="hover:text-[#B89B5E] transition-colors">Projects</a>
           <a href="./contact.html" class="hover:text-[#B89B5E] transition-colors">Contact</a>
         </div>
       </div>
@@ -108,15 +127,83 @@
     <div class="border-t border-[#B89B5E]/20 px-4 py-5 text-center text-xs text-white/50">© 2026 Verte Energies Limited. RC 8114494. Developed by Pelinks.</div>
   </footer>
   <script>
-    document.querySelectorAll('.nav-toggle').forEach((button) => {
-      const menu = button.closest('nav').querySelector('.mobile-nav');
-      button.addEventListener('click', () => {
-        const isOpen = menu.classList.toggle('max-h-screen');
-        menu.classList.toggle('max-h-0', !isOpen);
-        menu.classList.toggle('opacity-100', isOpen);
-        menu.classList.toggle('opacity-0', !isOpen);
-        button.setAttribute('aria-expanded', String(isOpen));
+    const nav = document.querySelector('nav');
+    const mobileToggle = nav.querySelector('.nav-toggle');
+    const mobileMenu = nav.querySelector('.mobile-nav');
+    const menuIcon = mobileToggle.querySelector('.menu-icon');
+    const closeIcon = mobileToggle.querySelector('.close-icon');
+    const aboutMenu = nav.querySelector('.about-menu');
+    const aboutToggle = aboutMenu.querySelector('.about-toggle');
+    const supportsHover = window.matchMedia('(hover: hover) and (pointer: fine)');
+    let suppressFocusOpen = false;
+
+    const setMobileOpen = (isOpen) => {
+      mobileMenu.classList.toggle('is-open', isOpen);
+      mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+      mobileMenu.toggleAttribute('inert', !isOpen);
+      mobileToggle.setAttribute('aria-expanded', String(isOpen));
+      mobileToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+      menuIcon.classList.toggle('hidden', isOpen);
+      closeIcon.classList.toggle('hidden', !isOpen);
+    };
+
+    const setAboutOpen = (isOpen, forceClosed = false) => {
+      aboutMenu.classList.toggle('is-open', isOpen);
+      aboutMenu.classList.toggle('force-closed', !isOpen && forceClosed);
+      if (isOpen) aboutMenu.classList.remove('force-closed');
+      aboutToggle.setAttribute('aria-expanded', String(isOpen));
+    };
+
+    mobileToggle.addEventListener('click', () => {
+      setMobileOpen(mobileToggle.getAttribute('aria-expanded') !== 'true');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => setMobileOpen(false));
+    });
+
+    aboutToggle.addEventListener('click', () => {
+      const isOpen = aboutToggle.getAttribute('aria-expanded') === 'true';
+      setAboutOpen(!isOpen, isOpen);
+    });
+
+    aboutMenu.addEventListener('mouseenter', () => {
+      if (supportsHover.matches && !aboutMenu.classList.contains('force-closed')) setAboutOpen(true);
+    });
+
+    aboutMenu.addEventListener('mouseleave', () => {
+      aboutMenu.classList.remove('force-closed');
+      if (!aboutMenu.contains(document.activeElement)) setAboutOpen(false);
+    });
+
+    aboutMenu.addEventListener('focusin', (event) => {
+      if (suppressFocusOpen) return;
+      if (event.target !== aboutToggle || aboutToggle.matches(':focus-visible')) setAboutOpen(true);
+    });
+
+    aboutMenu.addEventListener('focusout', () => {
+      requestAnimationFrame(() => {
+        if (!aboutMenu.contains(document.activeElement)) setAboutOpen(false);
       });
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!aboutMenu.contains(event.target)) setAboutOpen(false);
+      if (!nav.contains(event.target)) setMobileOpen(false);
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape') return;
+      if (mobileToggle.getAttribute('aria-expanded') === 'true') {
+        setMobileOpen(false);
+        mobileToggle.focus();
+      }
+      if (aboutToggle.getAttribute('aria-expanded') === 'true') {
+        suppressFocusOpen = true;
+        setAboutOpen(false, true);
+        aboutToggle.focus();
+        queueMicrotask(() => { suppressFocusOpen = false; });
+      }
     });
   </script>
 </body>

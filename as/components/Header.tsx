@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { NAV_ITEMS } from '../constants';
 
@@ -6,6 +6,9 @@ const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [isDesktopAboutOpen, setIsDesktopAboutOpen] = useState(false);
+  const desktopAboutRef = useRef<HTMLDivElement>(null);
+  const desktopAboutButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,9 +18,33 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handlePointerDown = (event: PointerEvent) => {
+      if (!desktopAboutRef.current?.contains(event.target as Node)) {
+        setIsDesktopAboutOpen(false);
+      }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && isDesktopAboutOpen) {
+        desktopAboutButtonRef.current?.focus();
+        setIsDesktopAboutOpen(false);
+      }
+    };
+
+    document.addEventListener('pointerdown', handlePointerDown);
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('pointerdown', handlePointerDown);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isDesktopAboutOpen]);
+
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (!href.startsWith('#')) {
       setIsOpen(false);
+      setIsDesktopAboutOpen(false);
       return;
     }
 
@@ -34,6 +61,7 @@ const Header: React.FC = () => {
         behavior: "smooth"
       });
       setIsOpen(false);
+      setIsDesktopAboutOpen(false);
     }
   };
 
@@ -69,13 +97,50 @@ const Header: React.FC = () => {
             {NAV_ITEMS.map((item) => {
               if (item.label === 'About') {
                 return (
-                  <div key={item.label} className="relative group">
-                    <button className="text-sm font-medium text-verte-white hover:text-verte-gold transition-colors px-4 py-2 flex items-center gap-1">
+                  <div
+                    key={item.label}
+                    ref={desktopAboutRef}
+                    className="relative group focus-within:z-10"
+                    onPointerEnter={(event) => {
+                      if (event.pointerType === 'mouse') {
+                        setIsDesktopAboutOpen(true);
+                      }
+                    }}
+                    onPointerLeave={(event) => {
+                      if (
+                        event.pointerType === 'mouse'
+                        && !desktopAboutRef.current?.contains(document.activeElement)
+                      ) {
+                        setIsDesktopAboutOpen(false);
+                      }
+                    }}
+                    onBlur={(event) => {
+                      if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+                        setIsDesktopAboutOpen(false);
+                      }
+                    }}
+                  >
+                    <button
+                      ref={desktopAboutButtonRef}
+                      type="button"
+                      aria-haspopup="true"
+                      aria-expanded={isDesktopAboutOpen}
+                      aria-controls="desktop-about-menu"
+                      onClick={() => setIsDesktopAboutOpen((isOpen) => !isOpen)}
+                      className="text-sm font-medium text-verte-white hover:text-verte-gold transition-colors px-4 py-2 flex items-center gap-1"
+                    >
                       {item.label}
-                      <ChevronDown className="h-4 w-4 group-hover:rotate-180 transition-transform" />
+                      <ChevronDown className={`h-4 w-4 transition-transform ${isDesktopAboutOpen ? 'rotate-180' : ''}`} />
                     </button>
                     {/* Dropdown */}
-                    <div className="absolute left-0 mt-2 w-56 bg-verte-black/95 backdrop-blur-xl border border-verte-gold/20 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2">
+                    <div
+                      id="desktop-about-menu"
+                      className={`absolute left-0 mt-2 w-56 bg-verte-black/95 backdrop-blur-xl border border-verte-gold/20 shadow-xl transition-all duration-200 py-2 ${
+                        isDesktopAboutOpen
+                          ? 'opacity-100 visible pointer-events-auto'
+                          : 'opacity-0 invisible pointer-events-none'
+                      }`}
+                    >
                       {aboutSubmenu.map((subitem) => (
                         <a
                           key={subitem.label}
@@ -116,7 +181,11 @@ const Header: React.FC = () => {
             {/* Mobile menu button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden inline-flex items-center justify-center p-2 text-verte-white/80 hover:text-verte-gold hover:bg-white/10 focus:outline-none transition-colors"
+              type="button"
+              aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-expanded={isOpen}
+              aria-controls="mobile-navigation"
+              className="md:hidden inline-flex min-h-11 min-w-11 items-center justify-center p-2 text-verte-white/80 hover:text-verte-gold hover:bg-white/10 focus:outline-none transition-colors"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -125,7 +194,15 @@ const Header: React.FC = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`md:hidden absolute w-full bg-verte-black/95 backdrop-blur-xl border-t border-verte-gold/20 transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? 'max-h-screen opacity-100 shadow-lg' : 'max-h-0 opacity-0'}`}>
+      <div
+        id="mobile-navigation"
+        aria-hidden={!isOpen}
+        className={`md:hidden absolute w-full bg-verte-black/95 backdrop-blur-xl border-t border-verte-gold/20 transition-all duration-300 ease-in-out overscroll-contain ${
+          isOpen
+            ? 'max-h-[calc(100dvh-6.5rem)] overflow-y-auto opacity-100 shadow-lg'
+            : 'max-h-0 overflow-hidden opacity-0'
+        }`}
+      >
         <div className="px-4 pt-2 pb-6 space-y-1">
           {NAV_ITEMS.map((item) => {
             if (item.label === 'About') {
@@ -133,18 +210,23 @@ const Header: React.FC = () => {
                 <div key={item.label}>
                   <button
                     onClick={() => setOpenDropdown(openDropdown === 'about' ? null : 'about')}
+                    type="button"
+                    aria-expanded={openDropdown === 'about'}
+                    aria-controls="mobile-about-menu"
+                    tabIndex={isOpen ? undefined : -1}
                     className="w-full text-left px-4 py-3 text-base font-medium text-verte-white/80 hover:text-verte-gold hover:bg-white/5 transition-colors flex items-center justify-between"
                   >
                     {item.label}
                     <ChevronDown className={`h-4 w-4 transition-transform ${openDropdown === 'about' ? 'rotate-180' : ''}`} />
                   </button>
                   {openDropdown === 'about' && (
-                    <div className="pl-4 space-y-1 bg-white/5 mt-1">
+                    <div id="mobile-about-menu" className="pl-4 space-y-1 bg-white/5 mt-1">
                       {aboutSubmenu.map((subitem) => (
                         <a
                           key={subitem.label}
                           href={subitem.href}
                           onClick={(e) => handleNavClick(e, subitem.href)}
+                          tabIndex={isOpen ? undefined : -1}
                           className="block px-4 py-2 text-sm text-verte-white/75 hover:text-verte-gold transition-colors"
                         >
                           {subitem.label}
@@ -160,6 +242,7 @@ const Header: React.FC = () => {
                 key={item.label}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
+                tabIndex={isOpen ? undefined : -1}
                 className="block px-4 py-3 text-base font-medium text-verte-white/80 hover:text-verte-gold hover:bg-white/5 transition-colors"
               >
                 {item.label}
@@ -169,6 +252,7 @@ const Header: React.FC = () => {
           <a
             href="#contact"
             onClick={(e) => handleNavClick(e, '#contact')}
+            tabIndex={isOpen ? undefined : -1}
             className="block px-4 py-3 bg-verte-gold text-verte-black text-base font-semibold text-center hover:bg-[#c4aa70] transition-colors duration-200"
           >
             Get In Touch

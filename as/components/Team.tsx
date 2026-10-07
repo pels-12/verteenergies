@@ -65,7 +65,7 @@ const Team: React.FC = () => {
 
         <div>
           <h3 className="text-2xl font-extrabold text-verte-black mb-6">Board of Directors</h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-black/10 border border-black/10">
+          <div className="grid md:grid-cols-3 gap-px bg-black/10 border border-black/10">
             {TEAM_MEMBERS.map((member) => (
               <TeamCard key={member.name} member={member} />
             ))}

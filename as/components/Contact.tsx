@@ -82,7 +82,7 @@ const Contact: React.FC = () => {
                 </div>
               </div>
               {/* Contact Details - Simple Cards */}
-              <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-4 mt-8">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4 mt-8">
                 {/* Email Card */}
                 <div className="min-w-0 border border-verte-gold/30 p-6">
                   <div className="flex items-center gap-3 mb-4">
@@ -117,7 +117,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 {/* Website Card */}
-                <div className="min-w-0 border border-verte-gold/30 p-6">
+                <div className="min-w-0 border border-verte-gold/30 p-6 sm:col-span-2 lg:col-span-1 xl:col-span-2">
                   <div className="flex items-center gap-3 mb-4">
                     <Globe2 className="h-5 w-5 text-verte-gold" strokeWidth={2} />
                     <p className="text-xs font-bold text-verte-gold uppercase tracking-wider">Website</p>
@@ -196,6 +196,7 @@ const Contact: React.FC = () => {
               <a href="/about.html" className="hover:text-verte-gold transition-colors">About</a>
               <a href="/leadership.html" className="hover:text-verte-gold transition-colors">Leadership Team</a>
               <a href="/services.html" className="hover:text-verte-gold transition-colors">Services</a>
+              <a href="/projects.html" className="hover:text-verte-gold transition-colors">Projects</a>
               <a href="/contact.html" className="hover:text-verte-gold transition-colors">Contact</a>
             </div>
           </div>

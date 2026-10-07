@@ -78,7 +78,7 @@ const Hero: React.FC = () => {
 
       <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-verte-black to-transparent" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 w-full pt-28 pb-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 w-full pt-28 pb-36 sm:pb-16">
         <div className="max-w-2xl text-left">
           <div className="mb-5 flex items-center gap-4">
             <span className="h-px w-12 bg-verte-gold" />
@@ -129,16 +129,23 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+      <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20 flex" aria-label="Choose a hero slide">
         {slides.map((slide, index) => (
           <button
             key={slide.title}
             onClick={() => setCurrentSlide(index)}
-            className={`h-2 rounded-full transition-all ${
-              index === currentSlide ? 'w-8 bg-verte-gold' : 'w-2 bg-white/40 hover:bg-white/60'
-            }`}
+            type="button"
+            className="group flex h-11 w-11 items-center justify-center"
             aria-label={`Go to slide ${index + 1}`}
-          />
+            aria-current={index === currentSlide ? 'true' : undefined}
+          >
+            <span
+              aria-hidden="true"
+              className={`h-2 rounded-full transition-all ${
+                index === currentSlide ? 'w-8 bg-verte-gold' : 'w-2 bg-white/40 group-hover:bg-white/60'
+              }`}
+            />
+          </button>
         ))}
       </div>
 

@@ -19,7 +19,7 @@ export const NAV_ITEMS = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about.html' },
   { label: 'Services', href: '/services.html' },
-  { label: 'Projects', href: '#' },
+  { label: 'Projects', href: '/projects.html' },
   { label: 'Contact', href: '/contact.html' },
 ];
 
@@ -39,14 +39,6 @@ export const TEAM_MEMBERS = [
     bio: 'A multiple award-winning project and engineering management executive with over 25 years of international oil and gas experience.',
     image: '/images/team/olusayo-ajayi-brand-green.png',
     linkedIn: 'https://www.linkedin.com/in/olusayo-ajayi',
-  },
-  {
-    name: 'Adebola Evelyn Owede',
-    role: 'Non-Executive Director',
-    profileId: 'adebola-evelyn-owede',
-    bio: 'A CFA Charterholder and senior finance professional with over 20 years of experience across treasury, capital markets, and strategic finance.',
-    image: '/images/team/adebola-evelyn-owede-brand-green.png',
-    linkedIn: 'https://www.linkedin.com/in/adebolaowede',
   },
   {
     name: 'Ebele Ndukwe Radizi',

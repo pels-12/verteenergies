@@ -17,7 +17,7 @@
       -webkit-backdrop-filter: blur(14px);
     }
 
-    .profile-card { background: #1D3A35; border: 1px solid rgba(184, 155, 94, 0.24); }
+    .profile-card { background: #1D3A35; border: 1px solid rgba(184, 155, 94, 0.24); scroll-margin-top: 7rem; }
     .profile-photo { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: top center; }
     .profile-summary {
       display: -webkit-box;
@@ -26,13 +26,43 @@
       overflow: hidden;
       min-height: 4.5rem;
     }
-    .profile-more summary { list-style: none; }
+    .profile-more summary {
+      list-style: none;
+      display: inline-flex;
+      min-width: 44px;
+      min-height: 44px;
+      align-items: center;
+    }
+    a[aria-label$="on LinkedIn"] { min-width: 44px; min-height: 44px; }
     .profile-more summary::-webkit-details-marker { display: none; }
     .profile-more .less-label { display: none; }
     .profile-more[open] .more-label { display: none; }
     .profile-more[open] .less-label { display: inline; }
     .profile-more[open] .less-label { font-size: 0; }
     .profile-more[open] .less-label::after { content: 'Show Less'; font-size: 0.875rem; }
+    .desktop-about-menu {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-0.25rem);
+    }
+    .desktop-about:hover .desktop-about-menu,
+    .desktop-about:focus-within .desktop-about-menu,
+    .desktop-about[data-open="true"] .desktop-about-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .desktop-about:hover .desktop-about-icon,
+    .desktop-about:focus-within .desktop-about-icon,
+    .desktop-about[data-open="true"] .desktop-about-icon { transform: rotate(180deg); }
+    .desktop-about.force-closed .desktop-about-menu { opacity: 0; visibility: hidden; transform: translateY(-0.25rem); }
+    .desktop-about.force-closed .desktop-about-icon { transform: rotate(0); }
+    .mobile-nav { max-height: 0; overflow-y: hidden; }
+    .mobile-nav.is-open {
+      max-height: calc(100dvh - 6.5rem);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
 
   </style>
 </head>
@@ -43,12 +73,12 @@
         <a href="/" class="flex-shrink-0 flex items-center gap-3 hover:opacity-80 transition-opacity"><img src="./big%20logo.svg" alt="Verte Energies" class="h-12 w-auto max-w-[132px]" style="filter: brightness(0) invert(1);" /></a>
         <div class="hidden md:flex items-center space-x-1">
           <a href="/" class="text-sm font-medium text-white hover:text-[#B89B5E] transition-colors px-4 py-2">Home</a>
-          <div class="relative group">
-            <button type="button" class="text-sm font-medium text-white hover:text-[#B89B5E] transition-colors px-4 py-2 flex items-center gap-1">
+          <div class="desktop-about relative group" data-open="false">
+            <button type="button" class="desktop-about-toggle text-sm font-medium text-white hover:text-[#B89B5E] transition-colors px-4 py-2 flex items-center gap-1" aria-expanded="false" aria-haspopup="true" aria-controls="desktop-about-menu">
               About
-              <svg class="h-4 w-4 transition-transform group-hover:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+              <svg class="desktop-about-icon h-4 w-4 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
             </button>
-            <div class="absolute left-0 mt-2 w-56 bg-[#111111]/95 backdrop-blur-xl border border-[#B89B5E]/20 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2">
+            <div id="desktop-about-menu" class="desktop-about-menu absolute left-0 mt-2 w-56 bg-[#111111]/95 backdrop-blur-xl border border-[#B89B5E]/20 shadow-xl transition-all duration-200 py-2">
               <a href="./about.html" class="block px-4 py-2 text-sm text-white hover:text-[#B89B5E] hover:bg-white/5 transition-colors">About Us</a>
               <a href="./about.html#vision" class="block px-4 py-2 text-sm text-white hover:text-[#B89B5E] hover:bg-white/5 transition-colors">Vision &amp; Mission</a>
               <a href="./about.html#values" class="block px-4 py-2 text-sm text-white hover:text-[#B89B5E] hover:bg-white/5 transition-colors">Core Values</a>
@@ -56,18 +86,19 @@
             </div>
           </div>
           <a href="./services.html" class="text-sm font-medium text-white hover:text-[#B89B5E] transition-colors px-4 py-2">Services</a>
+          <a href="./projects.html" class="text-sm font-medium text-white hover:text-[#B89B5E] transition-colors px-4 py-2">Projects</a>
           <a href="./contact.html" class="text-sm font-medium text-white hover:text-[#B89B5E] transition-colors px-4 py-2">Contact</a>
         </div>
         <div class="flex items-center gap-3">
           <a href="./contact.html#contact" class="hidden md:inline-flex px-5 py-2.5 bg-[#B89B5E] text-[#111111] text-sm font-semibold hover:bg-[#c4aa70] transition-colors duration-200">Get In Touch</a>
-          <button type="button" class="nav-toggle md:hidden inline-flex items-center justify-center p-2 text-white/80 hover:text-[#B89B5E] hover:bg-white/10 focus:outline-none transition-colors" aria-label="Toggle navigation" aria-expanded="false">
+          <button type="button" class="nav-toggle md:hidden inline-flex min-h-[44px] min-w-[44px] items-center justify-center p-2 text-white/80 hover:text-[#B89B5E] hover:bg-white/10 focus:outline-none transition-colors" aria-label="Toggle navigation" aria-expanded="false">
             <svg class="menu-icon h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16" /><path d="M4 18h16" /><path d="M4 6h16" /></svg>
             <svg class="close-icon hidden h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
           </button>
         </div>
       </div>
     </div>
-    <div class="mobile-nav md:hidden absolute w-full max-h-0 overflow-hidden bg-[#111111]/95 backdrop-blur-xl border-t border-[#B89B5E]/20 opacity-0 transition-all duration-300 ease-in-out">
+    <div class="mobile-nav md:hidden absolute w-full overflow-x-hidden bg-[#111111]/95 backdrop-blur-xl border-t border-[#B89B5E]/20 opacity-0 transition-all duration-300 ease-in-out" aria-hidden="true" inert>
       <div class="px-4 pt-2 pb-6 space-y-1">
         <a href="/" class="block px-4 py-3 text-base font-medium text-white/80 hover:text-[#B89B5E] hover:bg-white/5 transition-colors">Home</a>
         <div>
@@ -76,13 +107,14 @@
             <svg class="mobile-about-icon h-4 w-4 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
           </button>
           <div class="mobile-about-menu hidden pl-4 space-y-1 bg-white/5 mt-1">
-            <a href="./about.html" class="block px-4 py-2 text-sm text-white/75 hover:text-[#B89B5E] transition-colors">About Us</a>
-            <a href="./about.html#vision" class="block px-4 py-2 text-sm text-white/75 hover:text-[#B89B5E] transition-colors">Vision &amp; Mission</a>
-            <a href="./about.html#values" class="block px-4 py-2 text-sm text-white/75 hover:text-[#B89B5E] transition-colors">Core Values</a>
-            <a href="./leadership.html" class="block px-4 py-2 text-sm text-white/75 hover:text-[#B89B5E] transition-colors">Leadership Team</a>
+            <a href="./about.html" class="flex min-h-[44px] items-center px-4 py-2 text-sm text-white/75 hover:text-[#B89B5E] transition-colors">About Us</a>
+            <a href="./about.html#vision" class="flex min-h-[44px] items-center px-4 py-2 text-sm text-white/75 hover:text-[#B89B5E] transition-colors">Vision &amp; Mission</a>
+            <a href="./about.html#values" class="flex min-h-[44px] items-center px-4 py-2 text-sm text-white/75 hover:text-[#B89B5E] transition-colors">Core Values</a>
+            <a href="./leadership.html" class="flex min-h-[44px] items-center px-4 py-2 text-sm text-white/75 hover:text-[#B89B5E] transition-colors">Leadership Team</a>
           </div>
         </div>
         <a href="./services.html" class="block px-4 py-3 text-base font-medium text-white/80 hover:text-[#B89B5E] hover:bg-white/5 transition-colors">Services</a>
+        <a href="./projects.html" class="block px-4 py-3 text-base font-medium text-white/80 hover:text-[#B89B5E] hover:bg-white/5 transition-colors">Projects</a>
         <a href="./contact.html" class="block px-4 py-3 text-base font-medium text-white/80 hover:text-[#B89B5E] hover:bg-white/5 transition-colors">Contact</a>
         <a href="./contact.html#contact" class="block px-4 py-3 bg-[#B89B5E] text-[#111111] text-base font-semibold text-center hover:bg-[#c4aa70] transition-colors duration-200">Get In Touch</a>
       </div>
@@ -97,15 +129,15 @@
         <p class="mt-6 max-w-3xl text-lg text-gray-300 leading-relaxed">Our leadership brings together energy, engineering, operations, finance, governance, and project delivery experience.</p>
 
         <h2 class="mt-14 text-3xl md:text-4xl font-bold text-white">Board of Directors</h2>
-        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 items-start">
-          <article id="anthony-nwachukwu-nwokoro" class="profile-card overflow-hidden h-full flex flex-col">
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 items-start">
+          <article id="anthony-nwachukwu-nwokoro" class="profile-card overflow-hidden flex flex-col">
             <img src="./images/team/anthony-nwachukwu-nwokoro-brand-green.png" alt="Anthony Nwachukwu Nwokoro" class="profile-photo" loading="eager" />
             <div class="p-6 flex flex-1 flex-col">
-              <h3 class="text-xl font-bold text-[#ffd700]">Anthony Nwachukwu Nwokoro</h3>
+              <h3 class="text-xl font-bold text-[#B89B5E]">Anthony Nwachukwu Nwokoro</h3>
               <p class="mt-2 min-h-[3rem] text-xs leading-5 tracking-[0.12em] text-[#B89B5E] font-semibold">CHAIRMAN / CHIEF EXECUTIVE OFFICER (CEO)</p>
               <p class="profile-summary mt-4 text-sm text-gray-200 leading-6">A distinguished construction, infrastructure, and energy executive whose career of over 25 years reflects an unwavering commitment to strategic leadership, operational excellence, and measurable commercial impact.</p>
               <details class="profile-more mt-3 text-sm text-gray-300 leading-6">
-                <summary class="cursor-pointer font-semibold text-[#B89B5E] hover:text-[#ffd700]"><span class="more-label">More</span><span class="less-label">Less</span></summary>
+                <summary class="cursor-pointer font-semibold text-[#B89B5E] hover:text-[#B89B5E]"><span class="more-label">More</span><span class="less-label">Less</span></summary>
                 <div class="mt-4 space-y-3">
                   <p>Anthony Nwachukwu Nwokoro is a distinguished construction, infrastructure, and energy executive whose career of over 25 years reflects an unwavering commitment to strategic leadership, operational excellence, and measurable commercial impact. Across boardrooms, construction sites, and energy facilities, he has consistently demonstrated the ability to translate complex challenges into tangible outcomes, earning his place among the most respected figures in Nigeria’s built environment and energy sectors.</p>
                   <p>At the core of Anthony’s corporate career is his role as Executive Director and Chief Operating Officer of Stefanutti Stocks Hapel Ltd, a high-profile joint venture between Stefanutti Stocks SA, one of South Africa’s foremost publicly listed construction groups, and Hapel Nigeria Limited. In this capacity, he carries full responsibility for strategic direction, operational performance, and corporate governance across the company’s Nigerian operations. His most defining contribution remains his role as Chief Negotiator in the landmark merger between Stefanutti Stocks SA and Hapel Nigeria Limited, a cross-border, multi-jurisdictional transaction that he led from strategy to conclusion with exceptional commercial precision and stakeholder diplomacy. Under his leadership, the company has overseen project portfolios exceeding USD 20 million, directed a workforce of over 500 employees, and secured high-value contracts across government, parastatal, and private sector segments.</p>
@@ -114,17 +146,17 @@
                   <p>Anthony holds a Bachelor’s degree in Management from the University of Nigeria, Nsukka. His academic grounding, combined with decades of applied executive experience across multinational construction and indigenous energy enterprises, has shaped a leader of exceptional breadth. He is a strategist, a negotiator, and a builder in every sense, whose contributions to Nigeria’s infrastructure and energy landscape continue to define the standard for executive leadership in the sector.</p>
                 </div>
               </details>
-              <a href="https://www.linkedin.com/in/nwokoro-nwachukwu-abbb314a" target="_blank" rel="noopener noreferrer" aria-label="Anthony Nwachukwu Nwokoro on LinkedIn" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#B89B5E] hover:text-[#ffd700]"><span class="text-base font-bold" aria-hidden="true">in</span> LinkedIn</a>
+              <a href="https://www.linkedin.com/in/nwokoro-nwachukwu-abbb314a" target="_blank" rel="noopener noreferrer" aria-label="Anthony Nwachukwu Nwokoro on LinkedIn" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#B89B5E] hover:text-[#B89B5E]"><span class="text-base font-bold" aria-hidden="true">in</span> LinkedIn</a>
             </div>
           </article>
-          <article id="olusayo-ajayi" class="profile-card overflow-hidden h-full flex flex-col">
+          <article id="olusayo-ajayi" class="profile-card overflow-hidden flex flex-col">
             <img src="./images/team/olusayo-ajayi-brand-green.png" alt="Olusayo Ajayi" class="profile-photo" loading="lazy" />
             <div class="p-6 flex flex-1 flex-col">
-              <h3 class="text-xl font-bold text-[#ffd700]">Olusayo Ajayi</h3>
+              <h3 class="text-xl font-bold text-[#B89B5E]">Olusayo Ajayi</h3>
               <p class="mt-2 min-h-[3rem] text-xs leading-5 tracking-[0.12em] text-[#B89B5E] font-semibold">NON-EXECUTIVE DIRECTOR</p>
               <p class="profile-summary mt-4 text-sm text-gray-200 leading-6">A seasoned and multiple award-winning project and engineering management executive with over 25 years of international experience across Africa, Europe, North America, and the Middle East.</p>
               <details class="profile-more mt-3 text-sm text-gray-300 leading-6">
-                <summary class="cursor-pointer font-semibold text-[#B89B5E] hover:text-[#ffd700]"><span class="more-label">More</span><span class="less-label">Less</span></summary>
+                <summary class="cursor-pointer font-semibold text-[#B89B5E] hover:text-[#B89B5E]"><span class="more-label">More</span><span class="less-label">Less</span></summary>
                 <div class="mt-4 space-y-3">
                   <p>Olusayo is currently Engineering &amp; Project Director at Isto Vantage Ltd. He is a seasoned and multiple award-winning project and engineering management executive with over 25 years of international experience across Africa, Europe, North America and Middle East in the upstream and downstream sectors of oil and gas industry.</p>
                   <p>A highly accomplished professional known for his transformative leadership, technical excellence and passion for continuous improvement with a proven track record of delivering large-scale, high-impact complex capital projects, including first-of-their-kind developments from concept selection through execution. His leadership is defined by a focus on operational excellence, asset integrity and value optimisation across the project lifecycle.</p>
@@ -136,37 +168,24 @@
                   <p>He has been acknowledged with several recognitions and professional awards. His recent accolade in 2026 includes the Most Influential Leader Driving Innovation in Global Oil &amp; Gas from the Empire Magazine.</p>
                 </div>
               </details>
-              <a href="https://www.linkedin.com/in/olusayo-ajayi" target="_blank" rel="noopener noreferrer" aria-label="Olusayo Ajayi on LinkedIn" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#B89B5E] hover:text-[#ffd700]"><span class="text-base font-bold" aria-hidden="true">in</span> LinkedIn</a>
+              <a href="https://www.linkedin.com/in/olusayo-ajayi" target="_blank" rel="noopener noreferrer" aria-label="Olusayo Ajayi on LinkedIn" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#B89B5E] hover:text-[#B89B5E]"><span class="text-base font-bold" aria-hidden="true">in</span> LinkedIn</a>
             </div>
           </article>
-          <article id="adebola-evelyn-owede" class="profile-card overflow-hidden h-full flex flex-col">
-            <img src="./images/team/adebola-evelyn-owede-brand-green.png" alt="Adebola Evelyn Owede" class="profile-photo" loading="lazy" />
-            <div class="p-6 flex flex-1 flex-col">
-              <h3 class="text-xl font-bold text-[#ffd700]">Adebola Evelyn Owede</h3>
-              <p class="mt-2 min-h-[3rem] text-xs leading-5 tracking-[0.12em] text-[#B89B5E] font-semibold">NON-EXECUTIVE DIRECTOR</p>
-              <p class="profile-summary mt-4 text-sm text-gray-200 leading-6">A CFA Charterholder and senior finance professional with over 20 years of experience across treasury, capital markets, and strategic finance.</p>
-              <details class="profile-more mt-3 text-sm text-gray-300 leading-6">
-                <summary class="cursor-pointer font-semibold text-[#B89B5E] hover:text-[#ffd700]"><span class="more-label">More</span><span class="less-label">Less</span></summary>
-                <p class="mt-4">Adebola Owede is a CFA Charterholder and senior finance professional with over 20 years of experience across treasury, capital markets, and strategic finance. She has a proven track record of leading complex financial initiatives, including financial modelling, capital optimization, and investment analysis, in global banking environments such as TD Bank and Zenith Bank. Known for her strategic mindset and strong stakeholder leadership, Adebola partners with senior executives to deliver data-driven insights that support critical business decisions, drive growth, and enhance financial performance.</p>
-              </details>
-              <a href="https://www.linkedin.com/in/adebolaowede" target="_blank" rel="noopener noreferrer" aria-label="Adebola Evelyn Owede on LinkedIn" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#B89B5E] hover:text-[#ffd700]"><span class="text-base font-bold" aria-hidden="true">in</span> LinkedIn</a>
-            </div>
-          </article>
-          <article id="ebele-ndukwe-radizi" class="profile-card overflow-hidden h-full flex flex-col">
+          <article id="ebele-ndukwe-radizi" class="profile-card overflow-hidden flex flex-col">
             <img src="./images/team/ebele-ndukwe-radizi-brand-green.png" alt="Ebele Ndukwe Radizi" class="profile-photo" loading="lazy" />
             <div class="p-6 flex flex-1 flex-col">
-              <h3 class="text-xl font-bold text-[#ffd700]">Ebele Ndukwe Radizi</h3>
+              <h3 class="text-xl font-bold text-[#B89B5E]">Ebele Ndukwe Radizi</h3>
               <p class="mt-2 min-h-[3rem] text-xs leading-5 tracking-[0.12em] text-[#B89B5E] font-semibold">COMPANY SECRETARY / CHIEF LEGAL OFFICER</p>
               <p class="profile-summary mt-4 text-sm text-gray-200 leading-6">A seasoned legal and consulting professional with over 20 years of experience spanning private legal practice, in-house advisory roles, and international development consulting.</p>
               <details class="profile-more mt-3 text-sm text-gray-300 leading-6">
-                <summary class="cursor-pointer font-semibold text-[#B89B5E] hover:text-[#ffd700]"><span class="more-label">More</span><span class="less-label">Less</span></summary>
+                <summary class="cursor-pointer font-semibold text-[#B89B5E] hover:text-[#B89B5E]"><span class="more-label">More</span><span class="less-label">Less</span></summary>
                 <div class="mt-4 space-y-3">
                   <p>Ebele N. Radizi is a seasoned legal and consulting professional with over 20 years of experience spanning private legal practice, in-house advisory roles, and international development consulting. Her work covers complex commercial transactions, contract negotiations, infrastructure and project financing, including greenfield and brownfield developments, public-private partnerships, and engagements across the energy and natural resources sectors.</p>
                   <p>She is widely recognised for her strong negotiation, deal-closing, and client relationship skills, and has advised both corporate and public-sector clients on mergers and acquisitions, joint ventures, insolvency, divestitures, and corporate governance matters. Ebele has also served as Company Secretary for major organisations and brings extensive experience in project management, organisational restructuring, and the establishment of new departments and programmes to improve operational effectiveness and profitability.</p>
                   <p>Ebele is a Barrister and Solicitor of the Supreme Court of Nigeria, a Chartered Secretary and Administrator (ICSAN), and a Notary Public of Nigeria. She is an active member of several international and professional legal bodies and brings strong capabilities in strategic planning, regulatory and policy analysis, conflict resolution, and continuous improvement initiatives. Fluent in English and Igbo, with intermediate proficiency in German, she brings a global perspective and disciplined legal insight to complex, multi-stakeholder environments.</p>
                 </div>
               </details>
-              <a href="https://www.linkedin.com/in/ebele-ndukwe-radizi-96935736/" target="_blank" rel="noopener noreferrer" aria-label="Ebele Ndukwe Radizi on LinkedIn" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#B89B5E] hover:text-[#ffd700]"><span class="text-base font-bold" aria-hidden="true">in</span> LinkedIn</a>
+              <a href="https://www.linkedin.com/in/ebele-ndukwe-radizi-96935736/" target="_blank" rel="noopener noreferrer" aria-label="Ebele Ndukwe Radizi on LinkedIn" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#B89B5E] hover:text-[#B89B5E]"><span class="text-base font-bold" aria-hidden="true">in</span> LinkedIn</a>
             </div>
           </article>
         </div>
@@ -176,14 +195,14 @@
           <h2 id="management-team-title" class="mt-4 text-4xl md:text-5xl font-bold text-white">Management Team</h2>
           <p class="mt-5 max-w-3xl text-gray-300 leading-7">Our management team translates strategy into disciplined execution across projects, finance, governance, and day-to-day operations.</p>
           <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 items-start">
-            <article id="collins-okaru" class="profile-card overflow-hidden h-full flex flex-col">
+            <article id="collins-okaru" class="profile-card overflow-hidden flex flex-col">
               <img src="./images/team/collins-okaru-brand-green.png" alt="Collins Okaru" class="profile-photo" loading="lazy" />
               <div class="p-6 flex flex-1 flex-col">
-                <h3 class="text-xl font-bold text-[#ffd700]">Collins Okaru</h3>
+                <h3 class="text-xl font-bold text-[#B89B5E]">Collins Okaru</h3>
                 <p class="mt-2 min-h-[3rem] text-xs leading-5 tracking-[0.12em] text-[#B89B5E] font-semibold">GENERAL MANAGER (TECHNICAL)</p>
                 <p class="profile-summary mt-4 text-sm text-gray-200 leading-6">A Chartered Engineer, PMP, and energy leader with over 20 years of experience delivering offshore, subsea, infrastructure, and industrial automation projects worldwide.</p>
                 <details class="profile-more mt-3 text-sm text-gray-300 leading-6">
-                  <summary class="cursor-pointer font-semibold text-[#B89B5E] hover:text-[#ffd700]"><span class="more-label">More</span><span class="less-label">Less</span></summary>
+                  <summary class="cursor-pointer font-semibold text-[#B89B5E] hover:text-[#B89B5E]"><span class="more-label">More</span><span class="less-label">Less</span></summary>
                   <div class="mt-4 space-y-3">
                     <p>Collins Okaru is an accomplished project and engineering leader with extensive international experience delivering complex capital projects across the global energy industry. Over the course of his career, he has held key engineering and project management roles supporting major international operators and engineering consultancies, including Shell, TotalEnergies, Xodus Group, the defunct Nigerian Agip Oil Company, TSKJ/JBN and NPSG Global. His expertise spans the complete project lifecycle—from opportunity maturation, concept selection, feasibility studies and Front-End Engineering Design (FEED) through detailed engineering, procurement, offshore execution, commissioning, start-up and operational readiness.</p>
                     <p>Recognised for his strategic leadership and technical excellence, Collins has successfully led multidisciplinary teams responsible for delivering high-value offshore and subsea developments across Africa, Europe, Asia, and the Middle East. His professional experience encompasses subsea production systems, SURF developments, offshore pipeline, riser and umbilical installations, brownfield modifications, asset integrity, engineering assurance, project execution planning, project controls, contract administration, risk and opportunity management, stakeholder engagement and capital project governance.</p>
@@ -192,33 +211,33 @@
                     <p>His multidisciplinary academic background complements his extensive practical experience in delivering major energy infrastructure projects. As General Manager (Technical) at Verte Energies Limited, Collins provides strategic leadership for the Company’s engineering, project delivery and business growth initiatives. He is responsible for strengthening project delivery standards, governance, advancing engineering capability, and expanding strategic partnerships to position Verte as partner of choice, globally respected technology-driven indigenous engineering company delivering integrated energy and infrastructure solutions throughout Africa and beyond.</p>
                   </div>
                 </details>
-                <a href="https://www.linkedin.com/in/collinsokaru" target="_blank" rel="noopener noreferrer" aria-label="Collins Okaru on LinkedIn" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#B89B5E] hover:text-[#ffd700]"><span class="text-base font-bold" aria-hidden="true">in</span> LinkedIn</a>
+                <a href="https://www.linkedin.com/in/collinsokaru" target="_blank" rel="noopener noreferrer" aria-label="Collins Okaru on LinkedIn" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#B89B5E] hover:text-[#B89B5E]"><span class="text-base font-bold" aria-hidden="true">in</span> LinkedIn</a>
               </div>
             </article>
-            <article id="terngu-utim" class="profile-card overflow-hidden h-full flex flex-col">
+            <article id="terngu-utim" class="profile-card overflow-hidden flex flex-col">
               <img src="./images/team/terngu-utim-brand-green.png" alt="Terngu Utim" class="profile-photo" loading="lazy" />
               <div class="p-6 flex flex-1 flex-col">
-                <h3 class="text-xl font-bold text-[#ffd700]">Terngu Utim</h3>
+                <h3 class="text-xl font-bold text-[#B89B5E]">Terngu Utim</h3>
                 <p class="mt-2 min-h-[3rem] text-xs leading-5 tracking-[0.12em] text-[#B89B5E] font-semibold">DIRECTOR (COMMERCIAL AND NEW BUSINESS DEVELOPMENT)</p>
                 <p class="profile-summary mt-4 text-sm text-gray-200 leading-6">A Houston-based development leader with extensive experience in commercial growth, petroleum geoscience, subsurface leadership, and new energy opportunities.</p>
                 <details class="profile-more mt-3 text-sm text-gray-300 leading-6">
-                  <summary class="cursor-pointer font-semibold text-[#B89B5E] hover:text-[#ffd700]"><span class="more-label">More</span><span class="less-label">Less</span></summary>
+                  <summary class="cursor-pointer font-semibold text-[#B89B5E] hover:text-[#B89B5E]"><span class="more-label">More</span><span class="less-label">Less</span></summary>
                   <div class="mt-4 space-y-3">
                     <p>Terngu Utim is a seasoned geoscientist and energy executive with over 27 years of international experience in oil and gas exploration, asset development, and commercial strategy. As Director of Commercial &amp; New Business Development at Verte Energies Ltd, he leads business development initiatives, opportunity evaluation, technical and commercial proposals, and strategic partnerships that strengthen the company's market position.</p>
                     <p>Throughout his career, Terngu has held leadership and technical roles with Shell, Murphy Exploration &amp; Production, Nexen Petroleum USA, and XPSG LLC, delivering value across the full upstream asset lifecycle—from exploration and reservoir characterization to field development, production, and asset optimization. He has successfully led multidisciplinary teams, contributed to the addition of hundreds of millions of barrels of oil equivalent (MMboe) to global energy portfolios, pioneered the application of AI and machine learning in subsurface interpretation, and delivered technical training for leading international petroleum organizations. He holds an M.Sc. in Petroleum Geoscience from Royal Holloway, University of London, alongside postgraduate and undergraduate qualifications in petroleum geoscience and geology.</p>
                   </div>
                 </details>
-                <a href="https://www.linkedin.com/in/ternguutim" target="_blank" rel="noopener noreferrer" aria-label="Terngu Utim on LinkedIn" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#B89B5E] hover:text-[#ffd700]"><span class="text-base font-bold" aria-hidden="true">in</span> LinkedIn</a>
+                <a href="https://www.linkedin.com/in/ternguutim" target="_blank" rel="noopener noreferrer" aria-label="Terngu Utim on LinkedIn" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#B89B5E] hover:text-[#B89B5E]"><span class="text-base font-bold" aria-hidden="true">in</span> LinkedIn</a>
               </div>
             </article>
-            <article id="samson-onoh" class="profile-card overflow-hidden h-full flex flex-col">
+            <article id="samson-onoh" class="profile-card overflow-hidden flex flex-col">
               <img src="./images/team/samson-onoh-brand-green.png" alt="Samson Onoh" class="profile-photo" loading="lazy" />
               <div class="p-6 flex flex-1 flex-col">
-                <h3 class="text-xl font-bold text-[#ffd700]">Samson Onoh</h3>
+                <h3 class="text-xl font-bold text-[#B89B5E]">Samson Onoh</h3>
                 <p class="mt-2 min-h-[3rem] text-xs leading-5 tracking-[0.12em] text-[#B89B5E] font-semibold">GENERAL MANAGER (PROJECTS AND OPERATIONS PORTFOLIO)</p>
                 <p class="profile-summary mt-4 text-sm text-gray-200 leading-6">A COREN-registered engineer and PMP-certified portfolio leader managing projects, operations, delivery priorities, and performance for Verte Energies.</p>
                 <details class="profile-more mt-3 text-sm text-gray-300 leading-6">
-                  <summary class="cursor-pointer font-semibold text-[#B89B5E] hover:text-[#ffd700]"><span class="more-label">More</span><span class="less-label">Less</span></summary>
+                  <summary class="cursor-pointer font-semibold text-[#B89B5E] hover:text-[#B89B5E]"><span class="more-label">More</span><span class="less-label">Less</span></summary>
                   <div class="mt-4 space-y-3">
                     <p>Samson Onoh is a seasoned, APM certified Project Practitioner with over 30 years industry experience in facilities development, Engineering design and Construction. He led several multidiscipline project teams to deliver major greenfield and brownfield opportunities across numerous Assets in the shallow and deep offshore fields of Nigeria. He started his career as a project engineer for PLS Nacap International (JV with B+B Oil &amp; Gas Nigeria Ltd) where he delivered major oil and gas production facilities, flowlines, delivery lines and trunklines across key oil and gas fields in the East and West of Nigeria.</p>
                     <p>Samson then joined Shell as an experienced Mechanical Project Engineer with the Bonga Asset Engineering and Construction team. He helped the team to complete the rigorous post first oil Project-to-Asset handover and led various project teams to liquidate key post project handover legacy project over the years making the Bonga Asset a great investment case. Samson spent some time with the Static Mechanical Engineering Discipline team of Shell Nigeria Deep Water Projects Organization where he functioned for several years as a technical authority TA-Static Mechanical – Piping and valves. He later moved to the Front-End Engineering team where he managed all pre-DG3 opportunities required to address key Asset integrity threats, risks and opportunities on Bonga FPSO Topsides. His key role was the development and delivery of engineering solutions for Materials Projects, Major/Minor Projects designed to resolve asset integrity issues and systems obsolescence for Bonga FPSO. He later became the Portfolio Project Manager and the custodian of the SNEPCo Brownfield Portfolio Project Execution &amp; Management Manual and also managed the DWP Project Maturation funnel.</p>
@@ -226,7 +245,7 @@
                     <p>As GM (Projects &amp; Operations Portfolio) for Verte Energies, Samson provides strategic leadership for technical evaluation, planning and execution of business opportunities in Nigerian Oil and Gas sector. He leads a highly competent team that identifies, screens and delivers unique engineering solutions, strengthening Verte Energies’ competitive position in the market.</p>
                   </div>
                 </details>
-                <a href="https://www.linkedin.com/in/samson-onoh-coren-pmp-8a0736366/" target="_blank" rel="noopener noreferrer" aria-label="Samson Onoh on LinkedIn" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#B89B5E] hover:text-[#ffd700]"><span class="text-base font-bold" aria-hidden="true">in</span> LinkedIn</a>
+                <a href="https://www.linkedin.com/in/samson-onoh-coren-pmp-8a0736366/" target="_blank" rel="noopener noreferrer" aria-label="Samson Onoh on LinkedIn" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#B89B5E] hover:text-[#B89B5E]"><span class="text-base font-bold" aria-hidden="true">in</span> LinkedIn</a>
               </div>
             </article>
           </div>
@@ -247,6 +266,7 @@
           <a href="./about.html" class="hover:text-[#B89B5E] transition-colors">About</a>
           <a href="./leadership.html" class="hover:text-[#B89B5E] transition-colors">Leadership Team</a>
           <a href="./services.html" class="hover:text-[#B89B5E] transition-colors">Services</a>
+          <a href="./projects.html" class="hover:text-[#B89B5E] transition-colors">Projects</a>
           <a href="./contact.html" class="hover:text-[#B89B5E] transition-colors">Contact</a>
         </div>
       </div>
@@ -273,19 +293,95 @@
     window.addEventListener('scroll', syncNavScroll);
     syncNavScroll();
 
+    document.querySelectorAll('.desktop-about').forEach((dropdown) => {
+      const button = dropdown.querySelector('.desktop-about-toggle');
+      const menu = dropdown.querySelector('.desktop-about-menu');
+
+      const setOpen = (isOpen, forceClosed = false) => {
+        dropdown.dataset.open = String(isOpen);
+        dropdown.classList.toggle('force-closed', forceClosed);
+        button.setAttribute('aria-expanded', String(isOpen));
+      };
+
+      button.addEventListener('click', (event) => {
+        event.stopPropagation();
+        const isOpen = dropdown.dataset.open !== 'true';
+        setOpen(isOpen, !isOpen);
+      });
+
+      button.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowDown') {
+          event.preventDefault();
+          setOpen(true);
+          menu.querySelector('a')?.focus();
+        }
+      });
+
+      dropdown.addEventListener('focusin', () => {
+        if (!dropdown.classList.contains('force-closed')) {
+          button.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      dropdown.addEventListener('focusout', () => {
+        requestAnimationFrame(() => {
+          if (!dropdown.contains(document.activeElement)) {
+            setOpen(false);
+          }
+        });
+      });
+
+      dropdown.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          event.preventDefault();
+          setOpen(false, true);
+          button.focus();
+        }
+      });
+
+      dropdown.addEventListener('pointerenter', () => {
+        if (dropdown.dataset.open !== 'true') {
+          dropdown.classList.remove('force-closed');
+          button.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      dropdown.addEventListener('pointerleave', () => {
+        if (dropdown.dataset.open !== 'true' && !dropdown.contains(document.activeElement)) {
+          setOpen(false);
+        }
+      });
+
+      document.addEventListener('click', (event) => {
+        if (!dropdown.contains(event.target)) {
+          setOpen(false, true);
+        }
+      });
+    });
+
     document.querySelectorAll('.nav-toggle').forEach((button) => {
       const menu = button.closest('nav').querySelector('.mobile-nav');
       const menuIcon = button.querySelector('.menu-icon');
       const closeIcon = button.querySelector('.close-icon');
-      button.addEventListener('click', () => {
-        const isOpen = menu.classList.toggle('max-h-screen');
-        menu.classList.toggle('max-h-0', !isOpen);
+
+      const setMobileMenuOpen = (isOpen) => {
+        menu.classList.toggle('is-open', isOpen);
         menu.classList.toggle('opacity-100', isOpen);
         menu.classList.toggle('opacity-0', !isOpen);
         menu.classList.toggle('shadow-lg', isOpen);
         menuIcon.classList.toggle('hidden', isOpen);
         closeIcon.classList.toggle('hidden', !isOpen);
         button.setAttribute('aria-expanded', String(isOpen));
+        menu.setAttribute('aria-hidden', String(!isOpen));
+        menu.inert = !isOpen;
+      };
+
+      button.addEventListener('click', () => {
+        setMobileMenuOpen(!menu.classList.contains('is-open'));
+      });
+
+      menu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => setMobileMenuOpen(false));
       });
     });
 
